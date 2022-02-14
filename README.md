@@ -2,7 +2,6 @@
  It is a simple Car Rental Database Management System.
 
 ## Research Paper
- 
  >**Car Rental System**
   
   - **[Certificate](https://github.com/Amey-Thakur/ACHIEVEMENTS/blob/main/Research%20Papers/Car%20Rental%20System/IJRASET36339%20-%20Car%20Rental%20System.pdf)** 
