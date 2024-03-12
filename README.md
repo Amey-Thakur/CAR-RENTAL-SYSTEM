@@ -1,4 +1,5 @@
 # CAR-RENTAL-SYSTEM
+
  👉🏻 It is a simple Car Rental Database Management System.
 
 
@@ -14,6 +15,8 @@
 
 ---
 
-<p align="center"> <b> 👉🏻 Presented as a part of the 4th Semester of Engineering @ Terna Engineering College 👈🏻 <b> </p>
+<p align="center"> <b> 👉🏻 Presented as a part of the 5th Semester Mini-Project @ Terna Engineering College 👈🏻 <b> </p>
+
+<p align="center"> <b> 👷 Project Author: Amey Thakur (Batch of 2022) <b> </p>
  
-<p align="center"><a href='https://github.com/Amey-Thakur/ACHIEVEMENTS#engineering', style='color: greenyellow;'> ✌🏻 Back To Engineering ✌🏻</p>
+<p align="center"><a href='https://github.com/Amey-Thakur/ENGINEERING', style='color: greenyellow;'> ✌🏻 Back To Engineering ✌🏻</p>
