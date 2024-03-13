@@ -2,7 +2,6 @@
 
  👉🏻 It is a simple Car Rental Database Management System.
 
-
 ## Research Paper
  
  - **Car Rental System**
@@ -19,4 +18,4 @@
 
 <p align="center"> <b> 👷 Project Author: Amey Thakur (Batch of 2022) <b> </p>
  
-<p align="center"><a href='https://github.com/Amey-Thakur/ENGINEERING', style='color: greenyellow;'> ✌🏻 Back To Engineering ✌🏻</p>
+<p align="center"><a href='https://github.com/Amey-Thakur/COMPUTER-ENGINEERING', style='color: greenyellow;'> ✌🏻 Back To Engineering ✌🏻</p>
