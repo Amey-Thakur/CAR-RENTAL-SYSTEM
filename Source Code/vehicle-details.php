@@ -1,3 +1,12 @@
+<!--
+ * Car Rental Database Management System
+ * 
+ * @author      Amey Thakur
+ * @link        https://github.com/Amey-Thakur
+ * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @date        2021-01-19
+ * @license     MIT
+-->
 <style>
   div {
     font-family: Play;
@@ -120,7 +129,8 @@ if (isset($_POST['submit'])) {
           <div class="listing_detail_head row">
             <div class="col-md-9">
               <h2 style=" color:aqua;"><?php echo htmlentities($result->BrandName); ?> ,
-                <?php echo htmlentities($result->VehiclesTitle); ?></h2>
+                <?php echo htmlentities($result->VehiclesTitle); ?>
+              </h2>
             </div>
             <div class="col-md-3">
               <div class="price_info" style=" color:aqua;">
