@@ -1,14 +1,24 @@
+<!--
+ * Car Rental Database Management System - Admin Module
+ * 
+ * @author      Amey Thakur
+ * @link        https://github.com/Amey-Thakur
+ * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @date        2021-01-19
+ * @license     MIT
+-->
 <div class="brand clearfix">
-	<a href="dashboard.php" style="font-size: 20px;">Car Rental Portal | Admin Panel</a>  
-		<span class="menu-btn"><i class="fa fa-bars"></i></span>
-		<ul class="ts-profile-nav">
-			
-			<li class="ts-account">
-				<a href="#"><img src="img/ts-avatar.jpg" class="ts-avatar hidden-side" alt=""> Account <i class="fa fa-angle-down hidden-side"></i></a>
-				<ul>
-					<li><a href="change-password.php">Change Password</a></li>
-					<li><a href="logout.php">Logout</a></li>
-				</ul>
-			</li>
-		</ul>
-	</div>
+	<a href="dashboard.php" style="font-size: 20px;">Car Rental Portal | Admin Panel</a>
+	<span class="menu-btn"><i class="fa fa-bars"></i></span>
+	<ul class="ts-profile-nav">
+
+		<li class="ts-account">
+			<a href="#"><img src="img/ts-avatar.jpg" class="ts-avatar hidden-side" alt=""> Account <i
+					class="fa fa-angle-down hidden-side"></i></a>
+			<ul>
+				<li><a href="change-password.php">Change Password</a></li>
+				<li><a href="logout.php">Logout</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
