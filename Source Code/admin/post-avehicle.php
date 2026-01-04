@@ -1,22 +1,56 @@
 <?php
 /**
- * Car Rental Database Management System - Admin Module
+ * ============================================================================
+ * Car Rental Database Management System - Vehicle Posting Module
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file allows administrators to post new vehicles to the rental fleet. 
+ * It includes a comprehensive form for capturing vehicle details such as title,
+ * brand, overview, price, fuel type, model year, seating capacity, and images.
+ * It also handles the configuration of accessory features (e.g., Air Conditioner,
+ * Power Steering, etc.).
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Admin
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
 session_start();
 error_reporting(0);
 include('includes/config.php');
+
+/**
+ * Access Control
+ * 
+ * Restricts access to authenticated administrators only.
+ */
 if (strlen($_SESSION['alogin']) == 0) {
 	header('location:index.php');
 } else {
 
+	// Form Submission Handling
 	if (isset($_POST['submit'])) {
+		// Vehicle Basic Details
 		$vehicletitle = $_POST['vehicletitle'];
 		$brand = $_POST['brandname'];
 		$vehicleoverview = $_POST['vehicleoverview'];
@@ -24,11 +58,15 @@ if (strlen($_SESSION['alogin']) == 0) {
 		$fueltype = $_POST['fueltype'];
 		$modelyear = $_POST['modelyear'];
 		$seatingcapacity = $_POST['seatingcapacity'];
+
+		// Image Uploads
 		$vimage1 = $_FILES["img1"]["name"];
 		$vimage2 = $_FILES["img2"]["name"];
 		$vimage3 = $_FILES["img3"]["name"];
 		$vimage4 = $_FILES["img4"]["name"];
 		$vimage5 = $_FILES["img5"]["name"];
+
+		// Accessorries Configuration
 		$airconditioner = $_POST['airconditioner'];
 		$powerdoorlocks = $_POST['powerdoorlocks'];
 		$antilockbrakingsys = $_POST['antilockbrakingsys'];
@@ -41,14 +79,19 @@ if (strlen($_SESSION['alogin']) == 0) {
 		$centrallocking = $_POST['centrallocking'];
 		$crashcensor = $_POST['crashcensor'];
 		$leatherseats = $_POST['leatherseats'];
+
+		// Move Uploaded Files
 		move_uploaded_file($_FILES["img1"]["tmp_name"], "img/vehicleimages/" . $_FILES["img1"]["name"]);
 		move_uploaded_file($_FILES["img2"]["tmp_name"], "img/vehicleimages/" . $_FILES["img2"]["name"]);
 		move_uploaded_file($_FILES["img3"]["tmp_name"], "img/vehicleimages/" . $_FILES["img3"]["name"]);
 		move_uploaded_file($_FILES["img4"]["tmp_name"], "img/vehicleimages/" . $_FILES["img4"]["name"]);
 		move_uploaded_file($_FILES["img5"]["tmp_name"], "img/vehicleimages/" . $_FILES["img5"]["name"]);
 
+		// Insert Information into Database
 		$sql = "INSERT INTO tblvehicles(VehiclesTitle,VehiclesBrand,VehiclesOverview,PricePerDay,FuelType,ModelYear,SeatingCapacity,Vimage1,Vimage2,Vimage3,Vimage4,Vimage5,AirConditioner,PowerDoorLocks,AntiLockBrakingSystem,BrakeAssist,PowerSteering,DriverAirbag,PassengerAirbag,PowerWindows,CDPlayer,CentralLocking,CrashSensor,LeatherSeats) VALUES(:vehicletitle,:brand,:vehicleoverview,:priceperday,:fueltype,:modelyear,:seatingcapacity,:vimage1,:vimage2,:vimage3,:vimage4,:vimage5,:airconditioner,:powerdoorlocks,:antilockbrakingsys,:brakeassist,:powersteering,:driverairbag,:passengerairbag,:powerwindow,:cdplayer,:centrallocking,:crashcensor,:leatherseats)";
 		$query = $dbh->prepare($sql);
+
+		// Bind Parameters
 		$query->bindParam(':vehicletitle', $vehicletitle, PDO::PARAM_STR);
 		$query->bindParam(':brand', $brand, PDO::PARAM_STR);
 		$query->bindParam(':vehicleoverview', $vehicleoverview, PDO::PARAM_STR);
@@ -73,17 +116,16 @@ if (strlen($_SESSION['alogin']) == 0) {
 		$query->bindParam(':centrallocking', $centrallocking, PDO::PARAM_STR);
 		$query->bindParam(':crashcensor', $crashcensor, PDO::PARAM_STR);
 		$query->bindParam(':leatherseats', $leatherseats, PDO::PARAM_STR);
+
 		$query->execute();
 		$lastInsertId = $dbh->lastInsertId();
+
 		if ($lastInsertId) {
 			$msg = "Vehicle posted successfully";
 		} else {
 			$error = "Something went wrong. Please try again";
 		}
-
 	}
-
-
 	?>
 	<!doctype html>
 	<html lang="en" class="no-js">
@@ -318,8 +360,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 													<div class="checkbox checkbox-inline">
 														<input type="checkbox" id="powersteering" name="powersteering"
 															value="1">
-														<input type="checkbox" id="powersteering" name="powersteering"
-															value="1">
 														<label for="inlineCheckbox5"> Power Steering </label>
 													</div>
 												</div>
@@ -352,7 +392,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 													</div>
 												</div>
 												<div class="col-sm-3">
-													<div class="checkbox h checkbox-inline">
+													<div class="checkbox checkbox-inline">
 														<input type="checkbox" id="centrallocking" name="centrallocking"
 															value="1">
 														<label for="centrallocking">Central Locking</label>
