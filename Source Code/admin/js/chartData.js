@@ -1,3 +1,40 @@
+/**
+ * ============================================================================
+ * Car Rental Database Management System - Chart.js Data Configuration
+ * ============================================================================
+ * 
+ * This file contains static sample data for initializing Chart.js visualizations
+ * in the admin dashboard. It defines datasets for Line, Doughnut, Radar,
+ * Polar, and Bar charts used to demonstrate analytics capabilities.
+ * 
+ * NOTE: In a production environment, this data should be dynamically fetched
+ * from the database via AJAX endpoints.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Admin/Assets
+ * @author      Amey Thakur (Lead)
+ * @link        https://github.com/Amey-Thakur
+ * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
+ * @date        2021-01-19
+ * @license     MIT
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
+ */
+
 var swirlData = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
@@ -27,7 +64,7 @@ var swirlData = {
 var doughnutData = [
     {
         value: 300,
-        color:"#F7464A",
+        color: "#F7464A",
         highlight: "#FF5A5E",
         label: "Red"
     },
@@ -75,7 +112,7 @@ var radarData = {
 var polarData = [
     {
         value: 300,
-        color:"#F7464A",
+        color: "#F7464A",
         highlight: "#FF5A5E",
         label: "Red"
     },
@@ -107,7 +144,7 @@ var polarData = [
 ];
 
 var barChartData = {
-	labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
         {
             label: "My First dataset",
