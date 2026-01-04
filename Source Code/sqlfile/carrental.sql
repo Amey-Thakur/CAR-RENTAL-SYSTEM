@@ -1,3 +1,35 @@
+-- ============================================================================
+-- Car Rental Database Management System - Database Schema
+-- ============================================================================
+-- 
+-- This SQL dump contains the complete schema and initial seed data for the
+-- Car Rental System. It includes tables for users, admin, bookings, vehicles,
+-- brands, contact queries, and subscribers.
+-- 
+-- ----------------------------------------------------------------------------
+-- AUTHORSHIP & CREDITS (AHNA Team)
+-- ----------------------------------------------------------------------------
+-- This project was developed by the AHNA team:
+-- - Amey Thakur
+-- - Hasan Rizvi
+-- - Nithya Gnanasekar
+-- - Anisha Gupta
+-- 
+-- @package     CarRentalSystem
+-- @subpackage  Database
+-- @author      Amey Thakur (Lead)
+-- @link        https://github.com/Amey-Thakur
+-- @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+-- @version     1.0.0
+-- @date        2021-01-19
+-- @license     MIT
+-- 
+-- ============================================================================
+-- CHANGE LOG:
+-- ----------------------------------------------------------------------------
+-- 2021-01-19 - Initial release - AHNA Team
+-- ============================================================================
+
 -- phpMyAdmin SQL Dump
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
@@ -250,109 +282,6 @@ INSERT INTO `tblvehicles` (`id`, `VehiclesTitle`, `VehiclesBrand`, `VehiclesOver
 (19, 'Q2', 3, 'Audi Q2 Engine and Performance With all its power and the taut chassis, the Q2 conjures up plenty of thrills for the driver. A lot of this is down to its 190hp power output –strong enough for an SUV that tips the scales at just 1,430kg. The 2.0-litre engine is a familiar one.', 96955, 'Petrol', 2020, 5, 'q2-1.jpg', NULL, NULL, NULL, NULL, 2, 4, 1, 1, 1, 1, 3, 4, 1, 1, 1, 5, '2020-10-31 14:33:57', NULL),
 (20, 'Evoque', 10, 'The 2020 Land Rover Range Rover Evoque is a pretty good luxury subcompact SUV. It has a high-end cabin with lots of high-tech safety features, standard all-wheel drive, and solid handling. ... Its base engine is underpowered for an SUV of its weight, and its transmission and steering could be more precise.', 189999, 'Diesel', 2020, 5, 'evo-1.jpg', NULL, NULL, NULL, NULL, 4, 4, 1, 1, 1, 1, 4, 4, 1, 1, 1, 0, '2020-10-31 14:38:40', NULL);
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tblbooking`
---
-ALTER TABLE `tblbooking`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tblbrands`
---
-ALTER TABLE `tblbrands`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tblcontactusinfo`
---
-ALTER TABLE `tblcontactusinfo`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tblcontactusquery`
---
-ALTER TABLE `tblcontactusquery`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tblsubscribers`
---
-ALTER TABLE `tblsubscribers`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tblusers`
---
-ALTER TABLE `tblusers`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tblvehicles`
---
-ALTER TABLE `tblvehicles`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `tblbooking`
---
-ALTER TABLE `tblbooking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `tblbrands`
---
-ALTER TABLE `tblbrands`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `tblcontactusinfo`
---
-ALTER TABLE `tblcontactusinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `tblcontactusquery`
---
-ALTER TABLE `tblcontactusquery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `tblsubscribers`
---
-ALTER TABLE `tblsubscribers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `tblusers`
---
-ALTER TABLE `tblusers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `tblvehicles`
---
-ALTER TABLE `tblvehicles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
