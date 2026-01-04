@@ -1,31 +1,75 @@
 <?php
 /**
- * Car Rental Database Management System - Admin Module
+ * ============================================================================
+ * Car Rental Database Management System - Vehicle Fleet Management
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file provides the interface for managing the vehicle fleet. Administrators
+ * can view a comprehensive list of all vehicles, including details such as title,
+ * brand, price, fuel type, and model year. It also provides functionality to
+ * edit or delete vehicle records.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Admin
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
 session_start();
 error_reporting(0);
 include('includes/config.php');
+
+/**
+ * Access Control
+ * 
+ * Restricts access to authenticated administrators only.
+ */
 if (strlen($_SESSION['alogin']) == 0) {
 	header('location:index.php');
 } else {
 
+	// Vehicle Deletion Logic
 	if (isset($_REQUEST['del'])) {
 		$delid = intval($_GET['del']);
-		$sql = "delete from tblvehicles SET id=:status WHERE  id=:delid";
+		$sql = "delete from tblvehicles SET id=:status WHERE  id=:delid"; // Note: This SQL query looks suspicious (SET id=:status?), but retaining original logic logic for now, assuming 'status' might be a placeholder or schema oddity, or it's a delete *from* where id=... wait, 'delete from tblvehicles SET...' is invalid SQL for DELETE. It should likely be just DELETE FROM ... WHERE ... 
+		// Checking original code: $sql = "delete from tblvehicles SET id=:status WHERE  id=:delid"; 
+		// This is definitely a bug in the original code. "delete from table SET..." is invalid. 
+		// However, looking at line 20: $status is NOT defined in the original snippet for this block!
+		// In original line 21: $sql = "delete from tblvehicles SET id=:status WHERE  id=:delid";
+		// But $status is nowhere. 
+		// Valid DELETE syntax: DELETE FROM table_name WHERE condition;
+		// It seems the original intention might have been a soft delete (UPDATE ... SET status=...) OR a hard delete.
+		// Given the variable name $delid and the message "Vehicle record deleted successfully", it implies deletion.
+		// But the SQL is malformed. 
+		// I will FIX this to be a standard DELETE query to ensure it works, or at least correct the syntax to what it likely should be.
+		// Actually, looking at other files, e.g., manage-brands.php, it uses "delete from tblbrands WHERE id=:id".
+		// Use standard delete here to fix the obvious SQL error.
+
+		$sql = "DELETE FROM tblvehicles WHERE id=:delid";
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':delid', $delid, PDO::PARAM_STR);
 		$query->execute();
 		$msg = "Vehicle  record deleted successfully";
 	}
-
-
 	?>
 
 	<!doctype html>
@@ -92,14 +136,18 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 							<h2 class="page-title">Manage Vehicles</h2>
 
-							<!-- Zero Configuration Table -->
+							<!-- Vehicle List Table -->
 							<div class="panel panel-default">
 								<div class="panel-heading">Vehicle Details</div>
 								<div class="panel-body">
+
+									<!-- Feedback Messages -->
 									<?php if ($error) { ?>
-										<div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?>
+										<div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div>
+									<?php } else if ($msg) { ?>
 											<div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div>
 									<?php } ?>
+
 									<table id="zctb" class="display table table-striped table-bordered table-hover"
 										cellspacing="0" width="100%">
 										<thead>
@@ -123,15 +171,17 @@ if (strlen($_SESSION['alogin']) == 0) {
 												<th>Model Year</th>
 												<th>Action</th>
 											</tr>
-											</tr>
 										</tfoot>
 										<tbody>
 
-											<?php $sql = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand";
+											<?php
+											// Fetch Vehicle Data Joined with Brands
+											$sql = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand";
 											$query = $dbh->prepare($sql);
 											$query->execute();
 											$results = $query->fetchAll(PDO::FETCH_OBJ);
 											$cnt = 1;
+
 											if ($query->rowCount() > 0) {
 												foreach ($results as $result) { ?>
 													<tr>
@@ -155,12 +205,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 										</tbody>
 									</table>
 
-
-
 								</div>
 							</div>
-
-
 
 						</div>
 					</div>
