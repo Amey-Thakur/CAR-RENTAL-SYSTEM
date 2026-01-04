@@ -1,36 +1,66 @@
 <?php
 /**
- * Car Rental Database Management System
+ * ============================================================================
+ * Car Rental Database Management System - Admin Login
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file handles the authentication entry point for the Administrative Panel.
+ * It verifies admin credentials against the dashboard database and establishes
+ * the secure session for administrative actions.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Admin
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
 session_start();
 include('includes/config.php');
+
+/**
+ * Admin Authentication Logic
+ * 
+ * Verifies username and MD5 hashed password against the 'admin' table.
+ * On success, initializes the 'alogin' session variable and redirects to
+ * the password change page (dashboard entry point).
+ */
 if (isset($_POST['login'])) {
 	$email = $_POST['username'];
 	$password = md5($_POST['password']);
+
 	$sql = "SELECT UserName,Password FROM admin WHERE UserName=:email and Password=:password";
 	$query = $dbh->prepare($sql);
 	$query->bindParam(':email', $email, PDO::PARAM_STR);
 	$query->bindParam(':password', $password, PDO::PARAM_STR);
 	$query->execute();
 	$results = $query->fetchAll(PDO::FETCH_OBJ);
+
 	if ($query->rowCount() > 0) {
 		$_SESSION['alogin'] = $_POST['username'];
-		echo "<script type='text/javascript'> document.location = 'change-password.php'; </script>";
+		echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
 	} else {
-
 		echo "<script>alert('Invalid Details');</script>";
-
 	}
-
 }
-
 ?>
 <!doctype html>
 <html lang="en" class="no-js">
@@ -43,6 +73,8 @@ if (isset($_POST['login'])) {
 	<meta name="author" content="">
 
 	<title>AHNA | CAR Rental</title>
+
+	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
@@ -54,7 +86,6 @@ if (isset($_POST['login'])) {
 </head>
 
 <body>
-
 	<div class="login-page bk-img" style="background-image: url(img/adminlogin.jpg);">
 		<div class="form-content">
 			<div class="container">
@@ -63,8 +94,9 @@ if (isset($_POST['login'])) {
 						<h1 class="text-center text-bold text-light mt-4x">Sign in</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
-								<form method="post">
 
+								<!-- Login Form -->
+								<form method="post">
 									<label for="" class="text-uppercase text-sm">Your Username </label>
 									<input type="text" placeholder="Username" name="username" class="form-control mb">
 
@@ -72,11 +104,9 @@ if (isset($_POST['login'])) {
 									<input type="password" placeholder="Password" name="password"
 										class="form-control mb">
 
-
-
 									<button class="btn btn-primary btn-block" name="login" type="submit">LOGIN</button>
-
 								</form>
+
 							</div>
 						</div>
 					</div>
