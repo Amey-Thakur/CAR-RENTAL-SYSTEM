@@ -1,4 +1,14 @@
 <?php
+/**
+ * Car Rental Database Management System - Admin Module
+ * 
+ * @author      Amey Thakur
+ * @link        https://github.com/Amey-Thakur
+ * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @date        2021-01-19
+ * @license     MIT
+ */
+
 session_start();
 error_reporting(0);
 include('includes/config.php');
@@ -90,7 +100,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 								<div class="panel-heading">User queries</div>
 								<div class="panel-body">
 									<?php if ($error) { ?>
-										<div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?>
+										<div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div>
+									<?php } else if ($msg) { ?>
 											<div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div>
 									<?php } ?>
 									<table id="zctb" class="display table table-striped table-bordered table-hover"
