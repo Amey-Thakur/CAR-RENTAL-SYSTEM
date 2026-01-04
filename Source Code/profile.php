@@ -1,37 +1,85 @@
-<!--
- * Car Rental Database Management System
+<?php
+/**
+ * ============================================================================
+ * Car Rental Database Management System - User Profile Management
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file allows logged-in users to view and update their personal profile
+ * information. It handles the form submission for updating details such as
+ * name, contact number, date of birth, and address in the database.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  UserDashboard
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
--->
-<style>
-  div {
-    font-family: Play;
-    font-size: 20px;
-    color: BLUE;
-  }
-</style>
+ * 
+ * @requires    PHP 7.0+
+ * @requires    MySQL 5.7+
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
+ */
 
-<?php
+/**
+ * Session Initialization
+ */
 session_start();
+
+/**
+ * Error Reporting
+ */
 error_reporting(0);
+
+/**
+ * Database Connection
+ */
 include('includes/config.php');
+
+/**
+ * Access Control Check
+ * 
+ * Redirects to the login page if the user is not authenticated.
+ */
 if (strlen($_SESSION['login']) == 0) {
   header('location:index.php');
 } else {
+
+  /**
+   * Profile Update Logic
+   * 
+   * Handles the 'updateprofile' POST request.
+   * Updates the user's information in the 'tblusers' table based on the bound parameters.
+   */
   if (isset($_POST['updateprofile'])) {
     $name = $_POST['fullname'];
     $mobileno = $_POST['mobilenumber'];
     $dob = $_POST['dob'];
-    $adress = $_POST['address'];
+    $adress = $_POST['address']; // Note: Variable naming follows legacy convention
     $city = $_POST['city'];
     $country = $_POST['country'];
     $email = $_SESSION['login'];
+
+    // SQL Update Statement
     $sql = "update tblusers set FullName=:name,ContactNo=:mobileno,dob=:dob,Address=:adress,City=:city,Country=:country where EmailId=:email";
     $query = $dbh->prepare($sql);
+
+    // Parameter Binding
     $query->bindParam(':name', $name, PDO::PARAM_STR);
     $query->bindParam(':mobileno', $mobileno, PDO::PARAM_STR);
     $query->bindParam(':dob', $dob, PDO::PARAM_STR);
@@ -39,11 +87,15 @@ if (strlen($_SESSION['login']) == 0) {
     $query->bindParam(':city', $city, PDO::PARAM_STR);
     $query->bindParam(':country', $country, PDO::PARAM_STR);
     $query->bindParam(':email', $email, PDO::PARAM_STR);
+
+    // Execute Update
     $query->execute();
+
+    // Success Message
     $msg = "Profile Updated Successfully";
   }
-
   ?>
+
   <!DOCTYPE HTML>
   <html lang="en">
 
@@ -51,23 +103,18 @@ if (strlen($_SESSION['login']) == 0) {
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
     <title>AHNA | CAR Rental</title>
-    <!--Bootstrap -->
+
+    <!-- CSS Dependencies -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-    <!--Custome Style -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-    <!--OWL Carousel slider-->
     <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css">
-    <!--slick-slider -->
     <link href="assets/css/slick.css" rel="stylesheet">
-    <!--bootstrap-slider -->
     <link href="assets/css/bootstrap-slider.min.css" rel="stylesheet">
-    <!--FontAwesome Font Style -->
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 
+    <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
       href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114"
@@ -76,7 +123,11 @@ if (strlen($_SESSION['login']) == 0) {
       href="assets/images/favicon-icon/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/images/favicon-icon/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="assets/images/favicon-icon/favicon.png">
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+    <!-- Custom Component Styles -->
     <style>
       .errorWrap {
         padding: 10px;
@@ -95,17 +146,21 @@ if (strlen($_SESSION['login']) == 0) {
         -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
       }
+
+      div {
+        font-family: Play;
+        font-size: 20px;
+        color: BLUE;
+      }
     </style>
   </head>
 
   <body style="background-color:aqua;">
 
-    <!--Header-->
+    <!-- Header -->
     <?php include('includes/header.php'); ?>
-    <!-- /Header -->
-    <!--Page Header-->
 
-
+    <!-- Page Header -->
     <center>
       <div class="page-heading">
         <br /><br />
@@ -113,11 +168,13 @@ if (strlen($_SESSION['login']) == 0) {
       </div>
     </center>
 
-
-    <!-- /Page Header-->
-
-
     <?php
+    /**
+     * User Data Retrieval
+     * 
+     * Fetches the current user's profile information from database for display
+     * and pre-filling the form fields.
+     */
     $useremail = $_SESSION['login'];
     $sql = "SELECT * from tblusers where EmailId=:useremail";
     $query = $dbh->prepare($sql);
@@ -125,121 +182,135 @@ if (strlen($_SESSION['login']) == 0) {
     $query->execute();
     $results = $query->fetchAll(PDO::FETCH_OBJ);
     $cnt = 1;
+
+    // Check if user exists
     if ($query->rowCount() > 0) {
       foreach ($results as $result) { ?>
 
+        <!-- Profile Info Container -->
         <div class="container">
           <div class="user_profile_info gray-bg padding_4x4_40" style="background-color:aqua;">
-            <div class="upload_user_logo"> <img src="assets\images\dealer-logo.png" alt="image">
+            <div class="upload_user_logo">
+              <img src="assets\images\dealer-logo.png" alt="image">
             </div>
 
             <div class="dealer_info" style="color:blue;">
               <h5 style="color:black;"><?php echo htmlentities($result->FullName); ?></h5>
-              <p><?php echo htmlentities($result->Address); ?><br>
-                <?php echo htmlentities($result->City); ?>&nbsp;<?php echo htmlentities($result->Country); ?></p>
+              <p>
+                <?php echo htmlentities($result->Address); ?><br>
+                <?php echo htmlentities($result->City); ?>&nbsp;<?php echo htmlentities($result->Country); ?>
+              </p>
             </div>
           </div>
 
           <div class="row">
+            <!-- Sidebar -->
             <div class="col-md-3 col-sm-3">
               <?php include('includes/sidebar.php'); ?>
+
+              <!-- Profile Form Area -->
               <div class="col-md-6 col-sm-8" style="background-color:black;">
                 <div class="profile_wrap">
                   <center>
                     <h5 class="uppercase underline" style="background-color:blue;">MY PROFILE</h5>
                   </center>
-                  <?php
-                  if ($msg) { ?>
-                    <div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
+
+                  <!-- Success Notification -->
+                  <?php if ($msg) { ?>
+                    <div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div>
+                  <?php } ?>
+
+                  <!-- Profile Update Form -->
                   <form method="post">
+
+                    <!-- Registration Info (Read-Only) -->
                     <div class="form-group" style="color:white;">
                       <label class="control-label" style="color:blue;">REGISTRATION DATE -></label>
                       <?php echo htmlentities($result->RegDate); ?>
                     </div>
+
+                    <!-- Last Update Info -->
                     <?php if ($result->UpdationDate != "") { ?>
                       <div class="form-group" style="color:white;">
                         <label class="control-label" style="color:blue;">LAST UPDATED ON -></label>
                         <?php echo htmlentities($result->UpdationDate); ?>
                       </div>
                     <?php } ?>
+
+                    <!-- Editable Fields -->
                     <div class="form-group">
                       <label class="control-label" style="color:blue;">> NAME</label>
                       <input class="form-control white_bg" name="fullname" placeholder="Name"
                         value="<?php echo htmlentities($result->FullName); ?>" id="fullname" type="text" required>
                     </div>
+
                     <div class="form-group">
                       <label class="control-label" style="color:blue;">> EMAIL ADDRESS</label>
                       <input class="form-control white_bg" placeholder="Email Address"
                         value="<?php echo htmlentities($result->EmailId); ?>" name="emailid" id="email" type="email" required
                         readonly>
                     </div>
+
                     <div class="form-group">
                       <label class="control-label" style="color:blue;">> CONTACT NUMBER</label>
                       <input class="form-control white_bg" name="mobilenumber" placeholder="Contact Number"
                         value="<?php echo htmlentities($result->ContactNo); ?>" id="phone-number" type="text" required>
                     </div>
+
                     <div class="form-group">
                       <label class="control-label" style="color:blue;">> DATE OF BIRTH</label>
                       <input class="form-control white_bg" value="<?php echo htmlentities($result->dob); ?>" name="dob"
                         placeholder="DD/MM/YYYY" id="birth-date" type="text">
                     </div>
+
                     <div class="form-group">
                       <label class="control-label" style="color:blue;">> RESIDENTIAL ADDRESS</label>
                       <textarea class="form-control white_bg" name="address" rows="3"
                         placeholder="Enter your address"><?php echo htmlentities($result->Address); ?></textarea>
                     </div>
+
                     <div class="form-group">
                       <label class="control-label" style="color:blue;">> COUNTRY</label>
                       <input class="form-control white_bg" id="country" name="country" placeholder="Country"
                         value="<?php echo htmlentities($result->City); ?>" type="text">
                     </div>
+
                     <div class="form-group">
                       <label class="control-label" style="color:blue;">> CITY</label>
                       <input class="form-control white_bg" id="city" name="city" placeholder="City"
                         value="<?php echo htmlentities($result->City); ?>" type="text">
                     </div>
-                  <?php }
-    } ?>
 
-                <div class="form-group">
-                  <button type="submit" name="updateprofile" class="btn" style="background-color:blue;">UPDATE MY
-                    PROFILE</button>
+                    <!-- Submit Button -->
+                    <div class="form-group">
+                      <button type="submit" name="updateprofile" class="btn" style="background-color:blue;">UPDATE MY
+                        PROFILE</button>
+                    </div>
+
+                  </form>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!--/Profile-setting-->
+        <?php }
+    } ?>
 
-      <p></p><br /><!--Footer -->
+      <p></p><br />
+
+      <!-- Footer -->
       <?php include('includes/footer.php'); ?>
-      <!-- /Footer-->
 
-
-
-      <!--Login-Form -->
+      <!-- Modals -->
       <?php include('includes/login.php'); ?>
-      <!--/Login-Form -->
-
-      <!--Register-Form -->
       <?php include('includes/registration.php'); ?>
-
-      <!--/Register-Form -->
-
-      <!--Forgot-password-Form -->
       <?php include('includes/forgotpassword.php'); ?>
-      <!--/Forgot-password-Form -->
 
       <!-- Scripts -->
       <script src="assets/js/jquery.min.js"></script>
       <script src="assets/js/bootstrap.min.js"></script>
       <script src="assets/js/interface.js"></script>
-
-      <!--bootstrap-slider-JS-->
       <script src="assets/js/bootstrap-slider.min.js"></script>
-      <!--Slider-JS-->
       <script src="assets/js/slick.min.js"></script>
       <script src="assets/js/owl.carousel.min.js"></script>
 
