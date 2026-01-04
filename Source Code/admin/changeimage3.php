@@ -1,35 +1,67 @@
 <?php
 /**
- * Car Rental Database Management System - Admin Module
+ * ============================================================================
+ * Car Rental Database Management System - Vehicle Image Update (Image 3)
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file allows administrators to update the third image (Vimage3) of a 
+ * specific vehicle. It handles the file upload, moves the image to the 
+ * designated directory, and updates the database record.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Admin
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
 session_start();
 error_reporting(0);
 include('includes/config.php');
+
+/**
+ * Access Control
+ * 
+ * Restricts access to authenticated administrators only.
+ */
 if (strlen($_SESSION['alogin']) == 0) {
 	header('location:index.php');
 } else {
-	// Code for change password	
+
+	// Image Update Logic
 	if (isset($_POST['update'])) {
 		$vimage = $_FILES["img3"]["name"];
 		$id = intval($_GET['imgid']);
+
+		// Move uploaded file
 		move_uploaded_file($_FILES["img3"]["tmp_name"], "img/vehicleimages/" . $_FILES["img3"]["name"]);
-		$sql = "update tblvehicles set Vimage3=:vimage where id=:id";
+
+		// Update Database
+		$sql = "UPDATE tblvehicles SET Vimage3=:vimage WHERE id=:id";
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':vimage', $vimage, PDO::PARAM_STR);
 		$query->bindParam(':id', $id, PDO::PARAM_STR);
 		$query->execute();
 
 		$msg = "Image updated successfully";
-
-
-
 	}
 	?>
 
@@ -95,27 +127,30 @@ if (strlen($_SESSION['alogin']) == 0) {
 					<div class="row">
 						<div class="col-md-12">
 
-							<h2 class="page-title">Vehicle Image 3 </h2>
+							<h2 class="page-title">Vehicle Image 3</h2>
 
 							<div class="row">
 								<div class="col-md-10">
 									<div class="panel panel-default">
 										<div class="panel-heading">Vehicle Image 3 Details</div>
 										<div class="panel-body">
-											<form method="post" class="form-horizontal" enctype="multipart/form-data">
 
+											<!-- Image Update Form -->
+											<form method="post" class="form-horizontal" enctype="multipart/form-data">
 
 												<?php if ($error) { ?>
 													<div class="errorWrap">
-														<strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?>
+														<strong>ERROR</strong>:<?php echo htmlentities($error); ?>
+													</div><?php } else if ($msg) { ?>
 														<div class="succWrap">
-															<strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div>
+															<strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?>
+														</div>
 												<?php } ?>
 
 
 
 												<div class="form-group">
-													<label class="col-sm-4 control-label">Current Image3</label>
+													<label class="col-sm-4 control-label">Current Image 3</label>
 													<?php
 													$id = intval($_GET['imgid']);
 													$sql = "SELECT Vimage3 from tblvehicles where tblvehicles.id=:id";
@@ -144,12 +179,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 												</div>
 												<div class="hr-dashed"></div>
 
-
-
-
 												<div class="form-group">
 													<div class="col-sm-8 col-sm-offset-4">
-
 														<button class="btn btn-primary" name="update"
 															type="submit">Update</button>
 													</div>
@@ -163,11 +194,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 							</div>
 
-
-
 						</div>
 					</div>
-
 
 				</div>
 			</div>
