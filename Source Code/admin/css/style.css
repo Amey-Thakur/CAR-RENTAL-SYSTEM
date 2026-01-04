@@ -1,5 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
+/**
+ * ============================================================================
+ * Car Rental Database Management System - Admin Stylesheet
+ * ============================================================================
+ *
+ * This stylesheet defines the visual layout and styling for the administrative
+ * control panel, including sidebar, dashboard widgets, and data tables.
+ *
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ *
+ * @package     CarRentalSystem
+ * @subpackage  Admin/Assets
+ * @author      Amey Thakur (Lead)
+ * @link        https://github.com/Amey-Thakur
+ * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
+ * @date        2021-01-19
+ * @license     MIT
+ *
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
+ */
+
 /****************************
 *   FOR RESPONSIVENESS      *
 ****************************/
