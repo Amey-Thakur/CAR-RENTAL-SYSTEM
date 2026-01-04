@@ -1,32 +1,65 @@
 <?php
 /**
- * Car Rental Database Management System - Admin Module
+ * ============================================================================
+ * Car Rental Database Management System - Contact Info Management
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file allows administrators to update the contact information displayed
+ * on the website's "Contact Us" page. This includes the physical address,
+ * email address, and contact number.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Admin
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
 session_start();
 error_reporting(0);
 include('includes/config.php');
+
+/**
+ * Access Control
+ * 
+ * Restricts access to authenticated administrators only.
+ */
 if (strlen($_SESSION['alogin']) == 0) {
 	header('location:index.php');
 } else {
-	// Code for change password	
+
+	// Contact Info Update Logic
 	if (isset($_POST['submit'])) {
 		$address = $_POST['address'];
 		$email = $_POST['email'];
 		$contactno = $_POST['contactno'];
-		$sql = "update tblcontactusinfo set Address=:address,EmailId=:email,ContactNo=:contactno";
+
+		$sql = "UPDATE tblcontactusinfo SET Address=:address,EmailId=:email,ContactNo=:contactno";
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':address', $address, PDO::PARAM_STR);
 		$query->bindParam(':email', $email, PDO::PARAM_STR);
 		$query->bindParam(':contactno', $contactno, PDO::PARAM_STR);
 		$query->execute();
-		$msg = "Info Updateed successfully";
+
+		$msg = "Info Updated successfully"; // Corrected typo: 'Updateed' -> 'Updated'
 	}
 	?>
 
@@ -99,16 +132,20 @@ if (strlen($_SESSION['alogin']) == 0) {
 									<div class="panel panel-default">
 										<div class="panel-heading">Form fields</div>
 										<div class="panel-body">
+
+											<!-- Contact Info Form -->
 											<form method="post" name="chngpwd" class="form-horizontal"
 												onSubmit="return valid();">
 
-
 												<?php if ($error) { ?>
 													<div class="errorWrap">
-														<strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?>
+														<strong>ERROR</strong>:<?php echo htmlentities($error); ?>
+													</div><?php } else if ($msg) { ?>
 														<div class="succWrap">
-															<strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div>
+															<strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?>
+														</div>
 												<?php } ?>
+
 												<?php $sql = "SELECT * from  tblcontactusinfo ";
 												$query = $dbh->prepare($sql);
 												$query->execute();
@@ -143,12 +180,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 												} ?>
 												<div class="hr-dashed"></div>
 
-
-
-
 												<div class="form-group">
 													<div class="col-sm-8 col-sm-offset-4">
-
 														<button class="btn btn-primary" name="submit"
 															type="submit">Update</button>
 													</div>
@@ -162,11 +195,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 							</div>
 
-
-
 						</div>
 					</div>
-
 
 				</div>
 			</div>
