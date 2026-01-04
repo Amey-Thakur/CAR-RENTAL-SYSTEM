@@ -1,34 +1,63 @@
 <?php
 /**
- * Car Rental Database Management System - Admin Module
+ * ============================================================================
+ * Car Rental Database Management System - Contact Query Management
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file allows administrators to manage "Contact Us" queries submitted by
+ * users. Admins can view the details of each query, including the user's name,
+ * email, contact number, and message, and mark them as read or pending.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Admin
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
 session_start();
 error_reporting(0);
 include('includes/config.php');
+
+/**
+ * Session Verification
+ * 
+ * Ensures only authenticated admins can access this page.
+ */
 if (strlen($_SESSION['alogin']) == 0) {
 	header('location:index.php');
 } else {
+
+	// Mark Query as Read Logic
 	if (isset($_REQUEST['eid'])) {
 		$eid = intval($_GET['eid']);
-		$status = 1;
+		$status = 1; // 1 represents 'Read' status
 		$sql = "UPDATE tblcontactusquery SET status=:status WHERE  id=:eid";
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':status', $status, PDO::PARAM_STR);
 		$query->bindParam(':eid', $eid, PDO::PARAM_STR);
 		$query->execute();
 
-		$msg = "Testimonial Successfully Inacrive";
+		$msg = "Testimonial Successfully Inacrive"; // Note: Retained original message string, though "Query marked as read" might be semantically better.
 	}
-
-
-
 	?>
 
 	<!doctype html>
@@ -95,15 +124,18 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 							<h2 class="page-title">Manage Contact Us Queries</h2>
 
-							<!-- Zero Configuration Table -->
+							<!-- User Queries Table -->
 							<div class="panel panel-default">
 								<div class="panel-heading">User queries</div>
 								<div class="panel-body">
+
+									<!-- Feedback Messages -->
 									<?php if ($error) { ?>
 										<div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div>
 									<?php } else if ($msg) { ?>
 											<div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div>
 									<?php } ?>
+
 									<table id="zctb" class="display table table-striped table-bordered table-hover"
 										cellspacing="0" width="100%">
 										<thead>
@@ -131,11 +163,14 @@ if (strlen($_SESSION['alogin']) == 0) {
 										</tfoot>
 										<tbody>
 
-											<?php $sql = "SELECT * from  tblcontactusquery ";
+											<?php
+											// Fetch all contact queries
+											$sql = "SELECT * from  tblcontactusquery ";
 											$query = $dbh->prepare($sql);
 											$query->execute();
 											$results = $query->fetchAll(PDO::FETCH_OBJ);
 											$cnt = 1;
+
 											if ($query->rowCount() > 0) {
 												foreach ($results as $result) { ?>
 													<tr>
@@ -162,12 +197,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 										</tbody>
 									</table>
 
-
-
 								</div>
 							</div>
-
-
 
 						</div>
 					</div>
