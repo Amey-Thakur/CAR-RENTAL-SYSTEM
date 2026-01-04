@@ -1,17 +1,47 @@
 <?php
 /**
- * Car Rental Database Management System - Admin Module
+ * ============================================================================
+ * Car Rental Database Management System - Admin Dashboard
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file renders the main administrative dashboard. It provides a visual
+ * overview of key system metrics, including user counts, vehicle listings,
+ * booking statuses, and other critical statistics.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Admin
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
 session_start();
 error_reporting(0);
 include('includes/config.php');
+
+/**
+ * Security Check
+ * 
+ * verify if the admin is logged in. If not, redirect to the login page.
+ */
 if (strlen($_SESSION['alogin']) == 0) {
 	header('location:index.php');
 } else {
@@ -60,9 +90,12 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 							<h2 class="page-title">Dashboard</h2>
 
+							<!-- Statistics Cards Row 1 -->
 							<div class="row">
 								<div class="col-md-12">
 									<div class="row">
+
+										<!-- Registered Users Stat -->
 										<div class="col-md-3">
 											<div class="panel panel-default">
 												<div class="panel-body bk-primary text-light">
@@ -84,6 +117,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 														class="fa fa-arrow-right"></i></a>
 											</div>
 										</div>
+
+										<!-- Listed Vehicles Stat -->
 										<div class="col-md-3">
 											<div class="panel panel-default">
 												<div class="panel-body bk-success text-light">
@@ -107,6 +142,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 														class="fa fa-arrow-right"></i></a>
 											</div>
 										</div>
+
+										<!-- Total Bookings Stat -->
 										<div class="col-md-3">
 											<div class="panel panel-default">
 												<div class="panel-body bk-info text-light">
@@ -130,6 +167,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 														class="fa fa-arrow-right"></i></a>
 											</div>
 										</div>
+
+										<!-- Listed Brands Stat -->
 										<div class="col-md-3">
 											<div class="panel panel-default">
 												<div class="panel-body bk-warning text-light">
@@ -159,14 +198,14 @@ if (strlen($_SESSION['alogin']) == 0) {
 					</div>
 
 
-
+					<!-- Statistics Cards Row 2 -->
 					<div class="row">
 						<div class="col-md-12">
-
-
 							<div class="row">
 								<div class="col-md-12">
 									<div class="row">
+
+										<!-- Subscribers Stat -->
 										<div class="col-md-3">
 											<div class="panel panel-default">
 												<div class="panel-body bk-primary text-light">
@@ -188,6 +227,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 													Detail <i class="fa fa-arrow-right"></i></a>
 											</div>
 										</div>
+
+										<!-- Queries Stat -->
 										<div class="col-md-3">
 											<div class="panel panel-default">
 												<div class="panel-body bk-success text-light">
@@ -211,6 +252,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 														class="fa fa-arrow-right"></i></a>
 											</div>
 										</div>
+
+										<!-- Testimonials Stat -->
 										<div class="col-md-3">
 											<div class="panel panel-default">
 												<div class="panel-body bk-info text-light">
@@ -241,14 +284,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 						</div>
 					</div>
 
-
-
-
-
-
-
-
-
 				</div>
 			</div>
 		</div>
@@ -265,9 +300,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 		<script src="js/main.js"></script>
 
 		<script>
-
 			window.onload = function () {
-
 				// Line chart from swirlData for dashReport
 				var ctx = document.getElementById("dashReport").getContext("2d");
 				window.myLine = new Chart(ctx).Line(swirlData, {
@@ -284,7 +317,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 				// Dougnut Chart from doughnutData
 				var doctx = document.getElementById("chart-area4").getContext("2d");
 				window.myDoughnut = new Chart(doctx).Doughnut(doughnutData, { responsive: true });
-
 			}
 		</script>
 	</body>
