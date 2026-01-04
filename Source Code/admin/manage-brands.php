@@ -1,32 +1,63 @@
 <?php
 /**
- * Car Rental Database Management System - Admin Module
+ * ============================================================================
+ * Car Rental Database Management System - Brand Management
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file allows administrators to view, update, and delete vehicle brands.
+ * It fetches brand data from the 'tblbrands' table and displays it in a 
+ * responsive data table with options for editing or deletion.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Admin
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
 session_start();
 error_reporting(0);
 include('includes/config.php');
+
+/**
+ * Session Verification
+ * 
+ * Authenticates admin session before granting access to sensitive operations.
+ */
 if (strlen($_SESSION['alogin']) == 0) {
 	header('location:index.php');
 } else {
+
+	// Brand Deletion Logic
 	if (isset($_GET['del'])) {
 		$id = $_GET['del'];
+
+		// Delete Query
 		$sql = "delete from tblbrands  WHERE id=:id";
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':id', $id, PDO::PARAM_STR);
 		$query->execute();
+
 		$msg = "Page data updated  successfully";
-
 	}
-
-
-
 	?>
 
 	<!doctype html>
@@ -93,14 +124,18 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 							<h2 class="page-title">Manage Brands</h2>
 
-							<!-- Zero Configuration Table -->
+							<!-- Brands Management Table -->
 							<div class="panel panel-default">
 								<div class="panel-heading">Listed Brands</div>
 								<div class="panel-body">
+
+									<!-- Feedback Messages -->
 									<?php if ($error) { ?>
-										<div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?>
+										<div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div>
+									<?php } else if ($msg) { ?>
 											<div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div>
 									<?php } ?>
+
 									<table id="zctb" class="display table table-striped table-bordered table-hover"
 										cellspacing="0" width="100%">
 										<thead>
@@ -109,7 +144,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 												<th>Brand Name</th>
 												<th>Creation Date</th>
 												<th>Updation date</th>
-
 												<th>Action</th>
 											</tr>
 										</thead>
@@ -119,18 +153,20 @@ if (strlen($_SESSION['alogin']) == 0) {
 												<th>Brand Name</th>
 												<th>Creation Date</th>
 												<th>Updation date</th>
-
 												<th>Action</th>
 											</tr>
 											</tr>
 										</tfoot>
 										<tbody>
 
-											<?php $sql = "SELECT * from  tblbrands ";
+											<?php
+											// Fetch all brands
+											$sql = "SELECT * from  tblbrands ";
 											$query = $dbh->prepare($sql);
 											$query->execute();
 											$results = $query->fetchAll(PDO::FETCH_OBJ);
 											$cnt = 1;
+
 											if ($query->rowCount() > 0) {
 												foreach ($results as $result) { ?>
 													<tr>
@@ -152,12 +188,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 										</tbody>
 									</table>
 
-
-
 								</div>
 							</div>
-
-
 
 						</div>
 					</div>
