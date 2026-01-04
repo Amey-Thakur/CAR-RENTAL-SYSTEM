@@ -73,7 +73,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 		<link rel="stylesheet" href="css/fileinput.min.css">
 		<!-- Awesome Bootstrap checkbox -->
 		<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
-		<!-- Admin Stye -->
+		<!-- Admin Style -->
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 
@@ -126,7 +126,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 														<?php
 														$sql1 = "SELECT id from tblvehicles ";
 														$query1 = $dbh->prepare($sql1);
-														;
 														$query1->execute();
 														$results1 = $query1->fetchAll(PDO::FETCH_OBJ);
 														$totalvehicle = $query1->rowCount();
@@ -220,7 +219,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 														<div class="stat-panel-number h1 ">
 															<?php echo htmlentities($subscribers); ?>
 														</div>
-														<div class="stat-panel-title text-uppercase">Subscibers</div>
+														<div class="stat-panel-title text-uppercase">Subscribers</div>
 													</div>
 												</div>
 												<a href="manage-subscribers.php" class="block-anchor panel-footer">Full
@@ -236,7 +235,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 														<?php
 														$sql6 = "SELECT id from tblcontactusquery ";
 														$query6 = $dbh->prepare($sql6);
-														;
 														$query6->execute();
 														$results6 = $query6->fetchAll(PDO::FETCH_OBJ);
 														$query = $query6->rowCount();
