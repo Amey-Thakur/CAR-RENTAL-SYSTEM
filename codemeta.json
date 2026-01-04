@@ -1,0 +1,57 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "name": "CAR-RENTAL-SYSTEM",
+    "description": "A comprehensive web-based Car Rental Database Management System facilitating seamless vehicle booking, fleet management, and administrative oversight.",
+    "version": "1.0.0",
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "Amey",
+            "familyName": "Thakur"
+        },
+        {
+            "@type": "Person",
+            "givenName": "Hasan",
+            "familyName": "Rizvi"
+        },
+        {
+            "@type": "Person",
+            "givenName": "Nithya",
+            "familyName": "Gnanasekar"
+        },
+        {
+            "@type": "Person",
+            "givenName": "Anisha",
+            "familyName": "Gupta"
+        }
+    ],
+    "maintainer": {
+        "@type": "Person",
+        "givenName": "Amey",
+        "familyName": "Thakur",
+        "email": "amey.thakur.1905@gmail.com",
+        "url": "https://github.com/Amey-Thakur"
+    },
+    "programmingLanguage": [
+        "PHP",
+        "SQL",
+        "JavaScript",
+        "CSS",
+        "HTML"
+    ],
+    "operatingSystem": "Platform Independent",
+    "dateCreated": "2021-01-19",
+    "datePublished": "2021-01-19",
+    "dateModified": "2024-05-23",
+    "license": "https://opensource.org/licenses/MIT",
+    "url": "https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM",
+    "keywords": [
+        "car-rental",
+        "database-management-system",
+        "php",
+        "mysql",
+        "web-application",
+        "admin-panel"
+    ]
+}
