@@ -1,12 +1,38 @@
 <!--
- * Car Rental Database Management System - Admin Module
- * 
- * @author      Amey Thakur
- * @link        https://github.com/Amey-Thakur
- * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
- * @date        2021-01-19
- * @license     MIT
+============================================================================
+Car Rental Database Management System - Admin Header Partial
+============================================================================
+
+This file contains the HTML markup for the admin panel's header section.
+It includes the branding logo, navigation toggle button, and the user 
+account dropdown menu with options to change password or logout.
+This file is included in all admin pages to maintain consistent navigation.
+
+----------------------------------------------------------------------------
+AUTHORSHIP & CREDITS (AHNA Team)
+----------------------------------------------------------------------------
+This project was developed by the AHNA team:
+- Amey Thakur
+- Hasan Rizvi
+- Nithya Gnanasekar
+- Anisha Gupta
+
+@package     CarRentalSystem
+@subpackage  Admin
+@author      Amey Thakur (Lead)
+@link        https://github.com/Amey-Thakur
+@repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+@version     1.0.0
+@date        2021-01-19
+@license     MIT
+
+============================================================================
+CHANGE LOG:
+----------------------------------------------------------------------------
+2021-01-19 - Initial release - AHNA Team
+============================================================================
 -->
+
 <div class="brand clearfix">
 	<a href="dashboard.php" style="font-size: 20px;">Car Rental Portal | Admin Panel</a>
 	<span class="menu-btn"><i class="fa fa-bars"></i></span>
