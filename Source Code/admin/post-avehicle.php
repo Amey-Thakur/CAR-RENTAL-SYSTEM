@@ -1,4 +1,14 @@
 <?php
+/**
+ * Car Rental Database Management System - Admin Module
+ * 
+ * @author      Amey Thakur
+ * @link        https://github.com/Amey-Thakur
+ * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @date        2021-01-19
+ * @license     MIT
+ */
+
 session_start();
 error_reporting(0);
 include('includes/config.php');
@@ -171,7 +181,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 																foreach ($results as $result) {
 																	?>
 																	<option value="<?php echo htmlentities($result->id); ?>">
-																		<?php echo htmlentities($result->BrandName); ?></option>
+																		<?php echo htmlentities($result->BrandName); ?>
+																	</option>
 																<?php }
 															} ?>
 
