@@ -1,31 +1,63 @@
 <?php
 /**
- * Car Rental Database Management System - Admin Module
+ * ============================================================================
+ * Car Rental Database Management System - Subscriber Management
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file allows administrators to manage email subscribers. Admins can view
+ * the list of subscribed email addresses, the date of subscription, and delete
+ * subscribers from the database.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Admin
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
 session_start();
 error_reporting(0);
 include('includes/config.php');
+
+/**
+ * Access Control
+ * 
+ * Restricts access to authenticated administrators only.
+ */
 if (strlen($_SESSION['alogin']) == 0) {
 	header('location:index.php');
 } else {
+
+	// Subscriber Deletion Logic
 	if (isset($_GET['del'])) {
 		$id = $_GET['del'];
+
+		// Delete subscriber from database
 		$sql = "delete from  tblsubscribers  WHERE id=:id";
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':id', $id, PDO::PARAM_STR);
 		$query->execute();
+
 		$msg = "Subscriber info deleted";
-
 	}
-
-
 	?>
 
 	<!doctype html>
@@ -92,14 +124,18 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 							<h2 class="page-title">Manage Subscribers</h2>
 
-							<!-- Zero Configuration Table -->
+							<!-- Subscribers Table -->
 							<div class="panel panel-default">
 								<div class="panel-heading">Subscribers Details</div>
 								<div class="panel-body">
+
+									<!-- Feedback Messages -->
 									<?php if ($error) { ?>
-										<div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?>
+										<div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div>
+									<?php } else if ($msg) { ?>
 											<div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div>
 									<?php } ?>
+
 									<table id="zctb" class="display table table-striped table-bordered table-hover"
 										cellspacing="0" width="100%">
 										<thead>
@@ -120,11 +156,14 @@ if (strlen($_SESSION['alogin']) == 0) {
 										</tfoot>
 										<tbody>
 
-											<?php $sql = "SELECT * from tblsubscribers";
+											<?php
+											// Fetch all subscribers
+											$sql = "SELECT * from tblsubscribers";
 											$query = $dbh->prepare($sql);
 											$query->execute();
 											$results = $query->fetchAll(PDO::FETCH_OBJ);
 											$cnt = 1;
+
 											if ($query->rowCount() > 0) {
 												foreach ($results as $result) { ?>
 													<tr>
@@ -134,8 +173,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 														<td><?php echo htmlentities($result->PostingDate); ?></td>
 
 														<td>
-
-
 															<a href="manage-subscribers.php?del=<?php echo $result->id; ?>"
 																onclick="return confirm('Do you want to delete');"><i
 																	class="fa fa-close"></i></a>
@@ -149,12 +186,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 										</tbody>
 									</table>
 
-
-
 								</div>
 							</div>
-
-
 
 						</div>
 					</div>
