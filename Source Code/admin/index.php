@@ -1,25 +1,33 @@
 <?php
+/**
+ * Car Rental Database Management System
+ * 
+ * @author      Amey Thakur
+ * @link        https://github.com/Amey-Thakur
+ * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @date        2021-01-19
+ * @license     MIT
+ */
+
 session_start();
 include('includes/config.php');
-if(isset($_POST['login']))
-{
-$email=$_POST['username'];
-$password=md5($_POST['password']);
-$sql ="SELECT UserName,Password FROM admin WHERE UserName=:email and Password=:password";
-$query= $dbh -> prepare($sql);
-$query-> bindParam(':email', $email, PDO::PARAM_STR);
-$query-> bindParam(':password', $password, PDO::PARAM_STR);
-$query-> execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-if($query->rowCount() > 0)
-{
-$_SESSION['alogin']=$_POST['username'];
-echo "<script type='text/javascript'> document.location = 'change-password.php'; </script>";
-} else{
+if (isset($_POST['login'])) {
+	$email = $_POST['username'];
+	$password = md5($_POST['password']);
+	$sql = "SELECT UserName,Password FROM admin WHERE UserName=:email and Password=:password";
+	$query = $dbh->prepare($sql);
+	$query->bindParam(':email', $email, PDO::PARAM_STR);
+	$query->bindParam(':password', $password, PDO::PARAM_STR);
+	$query->execute();
+	$results = $query->fetchAll(PDO::FETCH_OBJ);
+	if ($query->rowCount() > 0) {
+		$_SESSION['alogin'] = $_POST['username'];
+		echo "<script type='text/javascript'> document.location = 'change-password.php'; </script>";
+	} else {
 
-  echo "<script>alert('Invalid Details');</script>";
+		echo "<script>alert('Invalid Details');</script>";
 
-}
+	}
 
 }
 
@@ -61,7 +69,8 @@ echo "<script type='text/javascript'> document.location = 'change-password.php';
 									<input type="text" placeholder="Username" name="username" class="form-control mb">
 
 									<label for="" class="text-uppercase text-sm">Password</label>
-									<input type="password" placeholder="Password" name="password" class="form-control mb">
+									<input type="password" placeholder="Password" name="password"
+										class="form-control mb">
 
 
 

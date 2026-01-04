@@ -1,4 +1,14 @@
 <?php
+/**
+ * Car Rental Database Management System
+ * 
+ * @author      Amey Thakur
+ * @link        https://github.com/Amey-Thakur
+ * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @date        2021-01-19
+ * @license     MIT
+ */
+
 session_start();
 error_reporting(0);
 include('includes/config.php');
