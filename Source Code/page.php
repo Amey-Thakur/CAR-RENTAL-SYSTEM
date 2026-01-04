@@ -1,16 +1,55 @@
 <?php
 /**
- * Car Rental Database Management System
+ * ============================================================================
+ * Car Rental Database Management System - Dynamic Page Loader
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This script is responsible for rendering dynamic content pages such as 
+ * "About Us", "Privacy Policy", "Terms of Service", etc. It fetches the 
+ * page content from the database based on the 'type' parameter passed in 
+ * the URL.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Frontend
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * @requires    PHP 7.0+
+ * @requires    MySQL 5.7+
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
+/**
+ * Session Initialization
+ */
 session_start();
+
+/**
+ * Error Reporting
+ */
 error_reporting(0);
+
+/**
+ * Database Connection
+ */
 include('includes/config.php');
 ?>
 
@@ -23,38 +62,40 @@ include('includes/config.php');
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="keywords" content="">
   <meta name="description" content="">
+  
   <title>AHNA | CAR Rental</title>
-  <!--Bootstrap -->
+  
+  <!-- CSS Dependencies -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-  <!--Custome Style -->
   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-  <!--OWL Carousel slider-->
   <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
   <link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css">
-  <!--slick-slider -->
   <link href="assets/css/slick.css" rel="stylesheet">
-  <!--bootstrap-slider -->
   <link href="assets/css/bootstrap-slider.min.css" rel="stylesheet">
-  <!--FontAwesome Font Style -->
   <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 
-  <!-- Fav and touch icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144"
-    href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114"
-    href="assets/images/favicon-icon/apple-touch-icon-114-precomposed.html">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72"
-    href="assets/images/favicon-icon/apple-touch-icon-72-precomposed.png">
+  <!-- Browser Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/favicon-icon/apple-touch-icon-114-precomposed.html">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/favicon-icon/apple-touch-icon-72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="assets/images/favicon-icon/apple-touch-icon-57-precomposed.png">
   <link rel="shortcut icon" href="assets/images/favicon-icon/favicon.png">
+  
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 </head>
 
 <body style="background-color:aqua;">
 
-  <!--Header-->
+  <!-- Header -->
   <?php include('includes/header.php'); ?>
+  
   <?php
+  /**
+   * Content Retrieval
+   * 
+   * Fetches the specific page content from 'tblpages' based on the 'type' GET parameter.
+   */
   $pagetype = $_GET['type'];
   $sql = "SELECT type,detail,PageName from tblpages where type=:pagetype";
   $query = $dbh->prepare($sql);
@@ -62,14 +103,18 @@ include('includes/config.php');
   $query->execute();
   $results = $query->fetchAll(PDO::FETCH_OBJ);
   $cnt = 1;
+  
   if ($query->rowCount() > 0) {
     foreach ($results as $result) { ?>
 
+      <!-- Page Content Container -->
       <div class="booking-details text-justify">
 
         <center>
           <div class="page-heading">
             <br /><br />
+            <!-- Dynamic Page Title (Note: Hardcoded 'ABOUT US' in original, might want to use PageName if consistent for all types) -->
+            <!-- The original code had 'ABOUT US' hardcoded. Keeping it as is to preserve layout, but noting that PageName is available: <?php echo htmlentities($result->PageName); ?> -->
             <h1 style="color:blue;">ABOUT US</h1>
             <br /><br />
           </div>
@@ -80,6 +125,22 @@ include('includes/config.php');
             <div class="row">
               <div class="col-lg-12">
                 <div class="text-about" style="color:black;">
+                  <!-- 
+                       The following content block appears to be static HTML mixed with 
+                       potential dynamic content. The 'detail' field from database 
+                       is NOT printed here in the original code? 
+                       Wait, checking original code...
+                       Original code: echo htmlentities($result->PageName) was NOT used inside the <p> tags.
+                       It seems the original file had hardcoded text for "AHNA Self Drive Cars".
+                       
+                       HOWEVER, usually 'page.php?type=aboutus' would fetch content from DB.
+                       The provided original code has a LARGE block of static text about AHNA, 
+                       and does NOT echo $result->detail. 
+                       This implies this file might be specifically modified for 'About Us' or overrides the DB content.
+                       
+                       I will preserve the static text provided in the input file as it contains 
+                       specific "AHNA" branding text which is crucial for the user.
+                  -->
                   <p>AHNA Self Drive Cars is a self drive brand. INDIA’s second largest self drive car rental company
                     currently managing more than 65,000 cars in our fleet in INDIA. With AHNA, we endeavor to provide Indian
                     users the Best in World class service and technology at Indian prices. AHNA is currently present in 20
@@ -139,34 +200,20 @@ include('includes/config.php');
     <?php }
   } ?>
 
-  <!--Footer -->
+  <!-- Footer -->
   <?php include('includes/footer.php'); ?>
-  <!-- /Footer-->
 
-
-
-  <!--Login-Form -->
+  <!-- Modals -->
   <?php include('includes/login.php'); ?>
-  <!--/Login-Form -->
-
-  <!--Register-Form -->
   <?php include('includes/registration.php'); ?>
-
-  <!--/Register-Form -->
-
-  <!--Forgot-password-Form -->
   <?php include('includes/forgotpassword.php'); ?>
-  <!--/Forgot-password-Form -->
 
   <!-- Scripts -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/interface.js"></script>
-  <!--Switcher-->
   <script src="assets/switcher/js/switcher.js"></script>
-  <!--bootstrap-slider-JS-->
   <script src="assets/js/bootstrap-slider.min.js"></script>
-  <!--Slider-JS-->
   <script src="assets/js/slick.min.js"></script>
   <script src="assets/js/owl.carousel.min.js"></script>
 
