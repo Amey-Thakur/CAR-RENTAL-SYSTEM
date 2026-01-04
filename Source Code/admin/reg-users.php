@@ -1,20 +1,58 @@
 <?php
 /**
- * Car Rental Database Management System - Admin Module
+ * ============================================================================
+ * Car Rental Database Management System - Registered Users Management
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file allows administrators to view the list of all registered users.
+ * It displays user details such as name, email, contact number, date of birth,
+ * address, city, country, and registration date.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Admin
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
 session_start();
 error_reporting(0);
 include('includes/config.php');
+
+/**
+ * Access Control
+ * 
+ * Restricts access to authenticated administrators only.
+ */
 if (strlen($_SESSION['alogin']) == 0) {
 	header('location:index.php');
 } else {
+
+	/**
+	 * Legacy Deletion Logic
+	 * 
+	 * @deprecated This block appears to be unused legacy code copied from 
+	 * manage-brands.php, as it references 'tblbrands'. It is retained here
+	 * for strict archival integrity but is not exposed via the UI.
+	 */
 	if (isset($_GET['del'])) {
 		$id = $_GET['del'];
 		$sql = "delete from tblbrands  WHERE id=:id";
@@ -22,11 +60,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 		$query->bindParam(':id', $id, PDO::PARAM_STR);
 		$query->execute();
 		$msg = "Page data updated  successfully";
-
 	}
-
-
-
 	?>
 
 	<!doctype html>
@@ -93,14 +127,18 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 							<h2 class="page-title">Registered Users</h2>
 
-							<!-- Zero Configuration Table -->
+							<!-- Registered Users Table -->
 							<div class="panel panel-default">
 								<div class="panel-heading">Reg Users</div>
 								<div class="panel-body">
+
+									<!-- Feedback Messages -->
 									<?php if ($error) { ?>
-										<div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?>
+										<div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div>
+									<?php } else if ($msg) { ?>
 											<div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div>
 									<?php } ?>
+
 									<table id="zctb" class="display table table-striped table-bordered table-hover"
 										cellspacing="0" width="100%">
 										<thead>
@@ -133,11 +171,14 @@ if (strlen($_SESSION['alogin']) == 0) {
 										</tfoot>
 										<tbody>
 
-											<?php $sql = "SELECT * from  tblusers ";
+											<?php
+											// Fetch all users
+											$sql = "SELECT * from  tblusers ";
 											$query = $dbh->prepare($sql);
 											$query->execute();
 											$results = $query->fetchAll(PDO::FETCH_OBJ);
 											$cnt = 1;
+
 											if ($query->rowCount() > 0) {
 												foreach ($results as $result) { ?>
 													<tr>
@@ -158,12 +199,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 										</tbody>
 									</table>
 
-
-
 								</div>
 							</div>
-
-
 
 						</div>
 					</div>
