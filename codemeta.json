@@ -3,36 +3,8 @@
     "@type": "SoftwareSourceCode",
     "name": "CAR-RENTAL-SYSTEM",
     "description": "A comprehensive web-based Car Rental Database Management System facilitating seamless vehicle booking, fleet management, and administrative oversight.",
-    "version": "1.0.0",
-    "author": [
-        {
-            "@type": "Person",
-            "givenName": "Amey",
-            "familyName": "Thakur"
-        },
-        {
-            "@type": "Person",
-            "givenName": "Hasan",
-            "familyName": "Rizvi"
-        },
-        {
-            "@type": "Person",
-            "givenName": "Nithya",
-            "familyName": "Gnanasekar"
-        },
-        {
-            "@type": "Person",
-            "givenName": "Anisha",
-            "familyName": "Gupta"
-        }
-    ],
-    "maintainer": {
-        "@type": "Person",
-        "givenName": "Amey",
-        "familyName": "Thakur",
-        "email": "amey.thakur.1905@gmail.com",
-        "url": "https://github.com/Amey-Thakur"
-    },
+    "identifier": "CAR-RENTAL-SYSTEM",
+    "license": "https://spdx.org/licenses/MIT.html",
     "programmingLanguage": [
         "PHP",
         "SQL",
@@ -40,18 +12,34 @@
         "CSS",
         "HTML"
     ],
-    "operatingSystem": "Platform Independent",
-    "dateCreated": "2021-01-19",
-    "datePublished": "2021-01-19",
-    "dateModified": "2024-05-23",
-    "license": "https://opensource.org/licenses/MIT",
-    "url": "https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM",
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "Amey",
+            "familyName": "Thakur",
+            "id": "https://orcid.org/0000-0001-5644-1575",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Terna Engineering College"
+            }
+        }
+    ],
+    "dateReleased": "2021-01-19",
+    "codeRepository": "https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM",
+    "developmentStatus": "complete",
+    "runtimePlatform": [
+        "XAMPP",
+        "WAMP",
+        "Apache",
+        "PHP 7.x"
+    ],
+    "applicationCategory": "Database Management System",
     "keywords": [
-        "car-rental",
-        "database-management-system",
-        "php",
-        "mysql",
-        "web-application",
-        "admin-panel"
+        "Car Rental",
+        "PHP",
+        "MySQL",
+        "Database Management",
+        "Web Application",
+        "Computer Engineering"
     ]
 }
