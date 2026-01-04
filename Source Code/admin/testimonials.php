@@ -1,36 +1,69 @@
 <?php
 /**
- * Car Rental Database Management System - Admin Module
+ * ============================================================================
+ * Car Rental Database Management System - Testimonial Management
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file allows administrators to manage user testimonials. Admins can view
+ * testimonials submitted by users and choose to activate or deactivate them.
+ * Only active testimonials are displayed on the public-facing site.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Admin
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
 session_start();
 error_reporting(0);
 include('includes/config.php');
+
+/**
+ * Access Control
+ * 
+ * Restricts access to authenticated administrators only.
+ */
 if (strlen($_SESSION['alogin']) == 0) {
 	header('location:index.php');
 } else {
+
+	// Deactivate Testimonial Logic
 	if (isset($_REQUEST['eid'])) {
 		$eid = intval($_GET['eid']);
-		$status = "0";
+		$status = "0"; // 0 represents 'Inactive'
 		$sql = "UPDATE tbltestimonial SET status=:status WHERE  id=:eid";
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':status', $status, PDO::PARAM_STR);
 		$query->bindParam(':eid', $eid, PDO::PARAM_STR);
 		$query->execute();
 
-		$msg = "Testimonial Successfully Inacrive";
+		$msg = "Testimonial Successfully Inacrive"; // Note: Retained original typo/message for fidelity, though 'Inactive' is correct.
 	}
 
 
+	// Activate Testimonial Logic
 	if (isset($_REQUEST['aeid'])) {
 		$aeid = intval($_GET['aeid']);
-		$status = 1;
+		$status = 1; // 1 represents 'Active'
 
 		$sql = "UPDATE tbltestimonial SET status=:status WHERE  id=:aeid";
 		$query = $dbh->prepare($sql);
@@ -40,8 +73,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 		$msg = "Testimonial Successfully Active";
 	}
-
-
 	?>
 
 	<!doctype html>
@@ -108,14 +139,18 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 							<h2 class="page-title">Manage Testimonials</h2>
 
-							<!-- Zero Configuration Table -->
+							<!-- Testimonials Table -->
 							<div class="panel panel-default">
 								<div class="panel-heading">User Testimonials</div>
 								<div class="panel-body">
+
+									<!-- Feedback Messages -->
 									<?php if ($error) { ?>
-										<div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?>
+										<div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div>
+									<?php } else if ($msg) { ?>
 											<div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div>
 									<?php } ?>
+
 									<table id="zctb" class="display table table-striped table-bordered table-hover"
 										cellspacing="0" width="100%">
 										<thead>
@@ -140,11 +175,14 @@ if (strlen($_SESSION['alogin']) == 0) {
 										</tfoot>
 										<tbody>
 
-											<?php $sql = "SELECT tblusers.FullName,tbltestimonial.UserEmail,tbltestimonial.Testimonial,tbltestimonial.PostingDate,tbltestimonial.status,tbltestimonial.id from tbltestimonial join tblusers on tblusers.Emailid=tbltestimonial.UserEmail";
+											<?php
+											// Fetch testimonials joined with user data
+											$sql = "SELECT tblusers.FullName,tbltestimonial.UserEmail,tbltestimonial.Testimonial,tbltestimonial.PostingDate,tbltestimonial.status,tbltestimonial.id from tbltestimonial join tblusers on tblusers.Emailid=tbltestimonial.UserEmail";
 											$query = $dbh->prepare($sql);
 											$query->execute();
 											$results = $query->fetchAll(PDO::FETCH_OBJ);
 											$cnt = 1;
+
 											if ($query->rowCount() > 0) {
 												foreach ($results as $result) { ?>
 													<tr>
@@ -172,12 +210,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 										</tbody>
 									</table>
 
-
-
 								</div>
 							</div>
-
-
 
 						</div>
 					</div>
