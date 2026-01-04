@@ -1,4 +1,14 @@
 <?php
+/**
+ * Car Rental Database Management System - Admin Module
+ * 
+ * @author      Amey Thakur
+ * @link        https://github.com/Amey-Thakur
+ * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @date        2021-01-19
+ * @license     MIT
+ */
+
 session_start();
 error_reporting(0);
 include('includes/config.php');
@@ -65,7 +75,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 														$regusers = $query->rowCount();
 														?>
 														<div class="stat-panel-number h1 ">
-															<?php echo htmlentities($regusers); ?></div>
+															<?php echo htmlentities($regusers); ?>
+														</div>
 														<div class="stat-panel-title text-uppercase">Reg Users</div>
 													</div>
 												</div>
@@ -86,7 +97,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 														$totalvehicle = $query1->rowCount();
 														?>
 														<div class="stat-panel-number h1 ">
-															<?php echo htmlentities($totalvehicle); ?></div>
+															<?php echo htmlentities($totalvehicle); ?>
+														</div>
 														<div class="stat-panel-title text-uppercase">Listed Vehicles</div>
 													</div>
 												</div>
@@ -108,7 +120,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 														?>
 
 														<div class="stat-panel-number h1 ">
-															<?php echo htmlentities($bookings); ?></div>
+															<?php echo htmlentities($bookings); ?>
+														</div>
 														<div class="stat-panel-title text-uppercase">Total Bookings</div>
 													</div>
 												</div>
@@ -129,7 +142,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 														$brands = $query3->rowCount();
 														?>
 														<div class="stat-panel-number h1 ">
-															<?php echo htmlentities($brands); ?></div>
+															<?php echo htmlentities($brands); ?>
+														</div>
 														<div class="stat-panel-title text-uppercase">Listed Brands</div>
 													</div>
 												</div>
@@ -165,7 +179,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 														$subscribers = $query4->rowCount();
 														?>
 														<div class="stat-panel-number h1 ">
-															<?php echo htmlentities($subscribers); ?></div>
+															<?php echo htmlentities($subscribers); ?>
+														</div>
 														<div class="stat-panel-title text-uppercase">Subscibers</div>
 													</div>
 												</div>
@@ -186,7 +201,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 														$query = $query6->rowCount();
 														?>
 														<div class="stat-panel-number h1 ">
-															<?php echo htmlentities($query); ?></div>
+															<?php echo htmlentities($query); ?>
+														</div>
 														<div class="stat-panel-title text-uppercase">Queries</div>
 													</div>
 												</div>
@@ -208,7 +224,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 														?>
 
 														<div class="stat-panel-number h1 ">
-															<?php echo htmlentities($testimonials); ?></div>
+															<?php echo htmlentities($testimonials); ?>
+														</div>
 														<div class="stat-panel-title text-uppercase">Testimonials</div>
 													</div>
 												</div>
