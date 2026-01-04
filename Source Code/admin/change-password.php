@@ -1,32 +1,66 @@
 <?php
 /**
- * Car Rental Database Management System - Admin Module
+ * ============================================================================
+ * Car Rental Database Management System - Admin Password Update
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file allows logged-in administrators to change their account password.
+ * It includes server-side validation to ensure the current password is correct
+ * and client-side validation to confirm determining the new password confirmation.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Admin
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
 session_start();
 error_reporting(0);
 include('includes/config.php');
+
+/**
+ * Session Verification
+ * 
+ * Ensures only authenticated admins can access this page.
+ */
 if (strlen($_SESSION['alogin']) == 0) {
 	header('location:index.php');
 } else {
-	// Code for change password	
+	// Password Update Logic
 	if (isset($_POST['submit'])) {
 		$password = md5($_POST['password']);
 		$newpassword = md5($_POST['newpassword']);
 		$username = $_SESSION['alogin'];
+
+		// Verify Current Password
 		$sql = "SELECT Password FROM admin WHERE UserName=:username and Password=:password";
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':username', $username, PDO::PARAM_STR);
 		$query->bindParam(':password', $password, PDO::PARAM_STR);
 		$query->execute();
 		$results = $query->fetchAll(PDO::FETCH_OBJ);
+
 		if ($query->rowCount() > 0) {
+			// Update to New Password
 			$con = "update admin set Password=:newpassword where UserName=:username";
 			$chngpwd1 = $dbh->prepare($con);
 			$chngpwd1->bindParam(':username', $username, PDO::PARAM_STR);
@@ -68,6 +102,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 		<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 		<!-- Admin Stye -->
 		<link rel="stylesheet" href="css/style.css">
+
+		<!-- Client-Side Validation -->
 		<script type="text/javascript">
 			function valid() {
 				if (document.chngpwd.newpassword.value != document.chngpwd.confirmpassword.value) {
@@ -97,8 +133,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 				box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
 			}
 		</style>
-
-
 	</head>
 
 	<body>
@@ -118,16 +152,22 @@ if (strlen($_SESSION['alogin']) == 0) {
 									<div class="panel panel-default">
 										<div class="panel-heading">Form fields</div>
 										<div class="panel-body">
+
+											<!-- Password Change Form -->
 											<form method="post" name="chngpwd" class="form-horizontal"
 												onSubmit="return valid();">
 
-
+												<!-- Feedback Messages -->
 												<?php if ($error) { ?>
 													<div class="errorWrap">
-														<strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?>
+														<strong>ERROR</strong>:<?php echo htmlentities($error); ?>
+													</div>
+												<?php } else if ($msg) { ?>
 														<div class="succWrap">
-															<strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div>
+															<strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?>
+														</div>
 												<?php } ?>
+
 												<div class="form-group">
 													<label class="col-sm-4 control-label">Current Password</label>
 													<div class="col-sm-8">
@@ -155,11 +195,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 												</div>
 												<div class="hr-dashed"></div>
 
-
-
 												<div class="form-group">
 													<div class="col-sm-8 col-sm-offset-4">
-
 														<button class="btn btn-primary" name="submit" type="submit">Save
 															changes</button>
 													</div>
@@ -173,11 +210,8 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 							</div>
 
-
-
 						</div>
 					</div>
-
 
 				</div>
 			</div>
