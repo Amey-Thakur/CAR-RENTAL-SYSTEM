@@ -1,16 +1,54 @@
 <?php
 /**
- * Car Rental Database Management System
+ * ============================================================================
+ * Car Rental Database Management System - Search Results Handler
+ * ============================================================================
  * 
- * @author      Amey Thakur
+ * This file processes the search criteria submitted by the user (Brand and 
+ * Fuel Type) and displays a filtered list of available vehicles. It performs 
+ * specific database queries to match the inventory with the user's preferences.
+ * 
+ * ----------------------------------------------------------------------------
+ * AUTHORSHIP & CREDITS (AHNA Team)
+ * ----------------------------------------------------------------------------
+ * This project was developed by the AHNA team:
+ * - Amey Thakur
+ * - Hasan Rizvi
+ * - Nithya Gnanasekar
+ * - Anisha Gupta
+ * 
+ * @package     CarRentalSystem
+ * @subpackage  Frontend
+ * @author      Amey Thakur (Lead)
  * @link        https://github.com/Amey-Thakur
  * @repository  https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+ * @version     1.0.0
  * @date        2021-01-19
  * @license     MIT
+ * 
+ * @requires    PHP 7.0+
+ * @requires    MySQL 5.7+
+ * 
+ * ============================================================================
+ * CHANGE LOG:
+ * ----------------------------------------------------------------------------
+ * 2021-01-19 - Initial release - AHNA Team
+ * ============================================================================
  */
 
+/**
+ * Session Initialization
+ */
 session_start();
+
+/**
+ * Database Connection
+ */
 include('includes/config.php');
+
+/**
+ * Error Reporting
+ */
 error_reporting(0);
 ?>
 
@@ -23,23 +61,20 @@ error_reporting(0);
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="keywords" content="">
   <meta name="description" content="">
+
   <title>AHNA | CAR Rental</title>
-  <!--Bootstrap -->
+
+  <!-- CSS Dependencies -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-  <!--Custome Style -->
   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-  <!--OWL Carousel slider-->
   <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
   <link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css">
-  <!--slick-slider -->
   <link href="assets/css/slick.css" rel="stylesheet">
-  <!--bootstrap-slider -->
   <link href="assets/css/bootstrap-slider.min.css" rel="stylesheet">
-  <!--FontAwesome Font Style -->
   <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 
 
-  <!-- Fav and touch icons -->
+  <!-- Browser Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144"
     href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114"
@@ -48,32 +83,39 @@ error_reporting(0);
     href="assets/images/favicon-icon/apple-touch-icon-72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="assets/images/favicon-icon/apple-touch-icon-57-precomposed.png">
   <link rel="shortcut icon" href="assets/images/favicon-icon/favicon.png">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 </head>
 
 <body style="background-color:aqua;">
 
-  <!--Header-->
+  <!-- Header -->
   <?php include('includes/header.php'); ?>
-  <!-- /Header -->
 
+  <!-- Title Section -->
   <center>
     <div class="page-heading">
       <br /><br />
       <h1 style="color:blue;">CAR LISTING</h1>
     </div>
   </center>
-  <!--Listing-->
+
+  <!-- Listing Section -->
   <section class="listing-page">
     <div class="container">
       <div class="row">
+
+        <!-- Results Column -->
         <div class="col-md-9 col-md-push-3">
           <div class="result-sorting-wrapper" style="background-color:black;">
             <div class="sorting-count" style="color:blue;">
               <?php
-              //Query for Listing count
+              // Retrieve user search inputs
               $brand = $_POST['brand'];
               $fueltype = $_POST['fueltype'];
+
+              // Query 1: Get count of matching vehicles
               $sql = "SELECT id from tblvehicles where tblvehicles.VehiclesBrand=:brand and tblvehicles.FuelType=:fueltype";
               $query = $dbh->prepare($sql);
               $query->bindParam(':brand', $brand, PDO::PARAM_STR);
@@ -89,7 +131,7 @@ error_reporting(0);
           </div>
 
           <?php
-
+          // Query 2: Get detailed vehicle data with Brand Info (JOIN)
           $sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand where tblvehicles.VehiclesBrand=:brand and tblvehicles.FuelType=:fueltype";
           $query = $dbh->prepare($sql);
           $query->bindParam(':brand', $brand, PDO::PARAM_STR);
@@ -97,18 +139,24 @@ error_reporting(0);
           $query->execute();
           $results = $query->fetchAll(PDO::FETCH_OBJ);
           $cnt = 1;
+
           if ($query->rowCount() > 0) {
             foreach ($results as $result) { ?>
+              <!-- Result Item Component -->
               <div class="product-listing-m gray-bg">
-                <div class="product-listing-img"><img
-                    src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1); ?>" class="img-responsive"
+                <div class="product-listing-img">
+                  <img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1); ?>" class="img-responsive"
                     alt="Image" /> </a>
                 </div>
+
                 <div class="product-listing-content">
-                  <h5><a
-                      href="vehicle-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?>
-                      , <?php echo htmlentities($result->VehiclesTitle); ?></a></h5>
+                  <h5>
+                    <a href="vehicle-details.php?vhid=<?php echo htmlentities($result->id); ?>">
+                      <?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->VehiclesTitle); ?>
+                    </a>
+                  </h5>
                   <p class="list-price">$<?php echo htmlentities($result->PricePerDay); ?> Per Day</p>
+
                   <ul>
                     <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity); ?>
                       seats</li>
@@ -116,6 +164,7 @@ error_reporting(0);
                       model</li>
                     <li><i class="fa fa-car" aria-hidden="true"></i><?php echo htmlentities($result->FuelType); ?></li>
                   </ul>
+
                   <a href="vehicle-details.php?vhid=<?php echo htmlentities($result->id); ?>" class="btn"
                     style="background-color:blue;">View Details </a>
                 </div>
@@ -124,19 +173,21 @@ error_reporting(0);
           } ?>
         </div>
 
-        <!--Side-Bar-->
+        <!-- Sidebar Filter Widget -->
         <aside class="col-md-3 col-md-pull-9">
           <div class="sidebar_widget" style="background-color:black;">
             <div class="widget_heading">
               <h5 style="color:blue;">> Find Your Car </h5>
             </div>
             <div class="sidebar_filter">
+              <!-- Search Form -->
               <form action="search-carresult.php" method="post">
                 <div class="form-group select">
                   <select class="form-control" name="brand">
                     <option>Select Brand</option>
-
-                    <?php $sql = "SELECT * from  tblbrands ";
+                    <?php
+                    // Populate Brand Filter
+                    $sql = "SELECT * from  tblbrands ";
                     $query = $dbh->prepare($sql);
                     $query->execute();
                     $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -148,56 +199,42 @@ error_reporting(0);
                         </option>
                       <?php }
                     } ?>
-
                   </select>
                 </div>
+
                 <div class="form-group select">
                   <select class="form-control" name="fueltype">
                     <option>Select Fuel Type</option>
                     <option value="Petrol">Petrol</option>
                     <option value="Diesel">Diesel</option>
-
                   </select>
                 </div>
+
                 <div class="form-group">
                   <button type="submit" class="btn btn-block" style="background-color:blue;">SEARCH</button>
                 </div>
               </form>
             </div>
           </div>
-
         </aside>
-        <!--/Side-Bar-->
       </div>
     </div>
   </section>
-  <!-- /Listing-->
 
-  <!--Footer -->
+  <!-- Footer -->
   <?php include('includes/footer.php'); ?>
-  <!-- /Footer-->
 
-  <!--Login-Form -->
+  <!-- Modals -->
   <?php include('includes/login.php'); ?>
-  <!--/Login-Form -->
-
-  <!--Register-Form -->
   <?php include('includes/registration.php'); ?>
-
-  <!--/Register-Form -->
-
-  <!--Forgot-password-Form -->
   <?php include('includes/forgotpassword.php'); ?>
 
   <!-- Scripts -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/interface.js"></script>
-  <!--Switcher-->
   <script src="assets/switcher/js/switcher.js"></script>
-  <!--bootstrap-slider-JS-->
   <script src="assets/js/bootstrap-slider.min.js"></script>
-  <!--Slider-JS-->
   <script src="assets/js/slick.min.js"></script>
   <script src="assets/js/owl.carousel.min.js"></script>
 
