@@ -377,7 +377,7 @@ Special thanks to the faculty members of the Department of Computer Engineering 
 
 <br>
 
-🔬 [Database Management System Lab](https://github.com/Amey-Thakur/DATABASE-MANAGEMENT-SYSTEM-AND-DATABASE-MANAGEMENT-SYSTEM-LAB)&nbsp;·&nbsp;🚗 [CAR-RENTAL-SYSTEM](https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM)
+🔬 **[Database Management System Lab](https://github.com/Amey-Thakur/DATABASE-MANAGEMENT-SYSTEM-AND-DATABASE-MANAGEMENT-SYSTEM-LAB)**&nbsp;·&nbsp;🚗 **[CAR-RENTAL-SYSTEM](https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM)**
 
 </div>
 
