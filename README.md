@@ -107,11 +107,25 @@ CAR-RENTAL-SYSTEM/
 │   ├── Draft/                           # Preliminary Documentation
 │   │   └── IJRASET - Car Rental.docx    # Working Draft Document
 │   ├── Figures/                         # UML & Architecture Diagrams
-│   │   ├── Fig. (1) ER Diagram.png      # Entity-Relationship Diagram
-│   │   ├── Fig. (2) Use Case.png        # Use Case Diagram
-│   │   ├── Fig. (3) DFD Level 0.png     # Data Flow Diagram - Level 0
-│   │   ├── Fig. (4) DFD Level 1.png     # Data Flow Diagram - Level 1
-│   │   └── (...15 more figures...)      # Additional System Diagrams
+│   │   ├── Fig. (1) Use Case Diagram.png           # System Use Case Diagram
+│   │   ├── Fig. (2) Data Flow Diagram.png          # Data Flow Diagram (DFD)
+│   │   ├── Fig. (3) Sequence Diagram.png           # System Sequence Diagram
+│   │   ├── Fig. (4) ER Diagram.jpg                 # Entity-Relationship Diagram
+│   │   ├── Fig. (5) Relationship Model.jpg         # Database Relationship Model
+│   │   ├── Fig. (6) Database Management.png        # Database Management Structure
+│   │   ├── Fig. (6) Home.jpg                       # Homepage Interface
+│   │   ├── Fig. (7) Cars.jpg                       # Vehicle Listing Page
+│   │   ├── Fig. (7) Database Structure.png         # Database Schema Structure
+│   │   ├── Fig. (8) Contact Us.jpg                 # Contact Form Interface
+│   │   ├── Fig. (9) Sign In.jpg                    # User Login Interface
+│   │   ├── Fig. (10) Make My Account.jpg           # User Registration Interface
+│   │   ├── Fig. (11) Password Recovery.jpg         # Password Reset Interface
+│   │   ├── Fig. (12) My Profile.jpg                # User Profile Page
+│   │   ├── Fig. (12) Update Password.jpg           # Password Update Interface
+│   │   ├── Fig. (13) My Booking.jpg                # Booking History Interface
+│   │   ├── Fig. (14) About Us.jpg                  # About Us Page
+│   │   ├── Fig. (15) Successful Connection.png     # Database Connection Success
+│   │   └── Untitled document.pdf                   # Supporting Documentation
 │   ├── B-42,45,50,51_DBMS_Project.pdf   # Formal Academic Report (09/10)
 │   ├── IJRASET-V9I7 - Car Rental.pdf    # Published Paper (IJRASET Vol 9 Issue 7)
 │   ├── IJRASET36339 - Certificate.pdf   # Publication Certificate
