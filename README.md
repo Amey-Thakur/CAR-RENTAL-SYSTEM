@@ -136,46 +136,79 @@ CAR-RENTAL-SYSTEM/
 │
 ├── Source Code/                         # Full Stack Web Application
 │   ├── admin/                           # Administrative Backend Module
-│   │   ├── css/                         # Stylesheets (style.css, vars.css)
-│   │   ├── fonts/                       # Font Assets
-│   │   ├── img/                         # Dashboard Images
-│   │   ├── includes/                    # Admin Configurations
-│   │   │   ├── config.php               # DB Connection
-│   │   │   ├── header.php               # Admin Navbar
-│   │   │   └── leftbar.php              # Admin Sidebar
-│   │   ├── js/                          # Scripts (main.js, libraries)
-│   │   └── (22 PHP files...)            # Admin Management Pages
+│   │   ├── css/                         # Admin Interface Stylesheets
+│   │   ├── fonts/                       # Admin Interface Web Fonts
+│   │   ├── img/                         # Admin Dashboard Visual Assets
+│   │   ├── includes/                    # Admin Shared Components
+│   │   │   ├── config.php               # Admin DB Connection Settings
+│   │   │   ├── header.php               # Admin Top Navigation Bar
+│   │   │   └── leftbar.php              # Admin Lateral Sidebar
+│   │   ├── js/                          # Admin Functional Scripts
+│   │   ├── change-password.php          # Admin Password Update Page
+│   │   ├── changeimage1.php             # Vehicle Image 1 Update Page
+│   │   ├── changeimage2.php             # Vehicle Image 2 Update Page
+│   │   ├── changeimage3.php             # Vehicle Image 3 Update Page
+│   │   ├── changeimage4.php             # Vehicle Image 4 Update Page
+│   │   ├── changeimage5.php             # Vehicle Image 5 Update Page
+│   │   ├── create-brand.php             # New Brand Creation Portal
+│   │   ├── dashboard.php                # System Overview Dashboard
+│   │   ├── edit-brand.php               # Vehicle Brand Modification
+│   │   ├── edit-vehicle.php             # Vehicle Details Editor
+│   │   ├── index.php                    # Admin Authentication Portal
+│   │   ├── logout.php                   # Admin Session Termination
+│   │   ├── manage-bookings.php          # Booking & Reservation Log
+│   │   ├── manage-brands.php            # Vehicle Brand Control Center
+│   │   ├── manage-contactusquery.php    # User Communication Tracker
+│   │   ├── manage-pages.php             # Content Management (CMS)
+│   │   ├── manage-subscribers.php       # Subscription List Manager
+│   │   ├── manage-vehicles.php          # Fleet Inventory Controller
+│   │   ├── nicEdit.js                   # Inline WYSIWYG Editor
+│   │   ├── nicEditorIcons.gif           # Editor Interface Icons
+│   │   ├── post-avehicle.php            # Vehicle Listing Submission
+│   │   ├── reg-users.php                # Registered User Directory
+│   │   ├── testimonials.php             # User Feedback Management
+│   │   └── update-contactinfo.php       # Contact Information CMS
 │   │
-│   ├── assets/                          # Frontend Resource Library
-│   │   ├── css/                         # Stylesheets
-│   │   ├── fonts/                       # Font Assets
-│   │   ├── images/                      # Vehicle & Interface Images
-│   │   └── js/                          # Scripts
+│   ├── assets/                          # Public Frontend Resources
+│   │   ├── css/                         # Public Interface Stylesheets
+│   │   ├── fonts/                       # Public Interface Web Fonts
+│   │   ├── images/                      # Fleet & UI Image Assets
+│   │   └── js/                          # Public Behavioral Scripts
 │   │
-│   ├── img/                             # General Application Images
-│   │   └── showcase.jpg                 # Homepage Banner Image
+│   ├── img/                             # General Content Images
+│   │   └── showcase.jpg                 # Homepage Hero Image
 │   │
-│   ├── includes/                        # Shared Components
-│   │   ├── config.php                   # Database Connection
-│   │   ├── footer.php                   # Site Footer
-│   │   ├── forgotpassword.php           # Password Recovery Logic
-│   │   ├── header.php                   # Navigation Bar
-│   │   ├── login.php                    # Auth Logic
-│   │   ├── registration.php             # Signup Logic
-│   │   └── sidebar.php                  # Shared Sidebar
+│   ├── includes/                        # Core Shared Framework
+│   │   ├── config.php                   # Global Database Configuration
+│   │   ├── footer.php                   # Global Page Footer Component
+│   │   ├── forgotpassword.php           # Account Recovery Interface
+│   │   ├── header.php                   # Global Page Header (Navbar)
+│   │   ├── login.php                    # User Authentication Component
+│   │   ├── registration.php             # User Signup Component
+│   │   └── sidebar.php                  # Shared Application Sidebar
 │   │
-│   ├── sqlfile/                         # Database Schema
-│   │   └── carrental.sql                # Full Database Dump
+│   ├── sqlfile/                         # Data Architecture
+│   │   └── carrental.sql                # Relational Database Schema
 │   │
-│   └── (11 PHP files...)                # Core Application Pages
+│   ├── car-listing.php                  # Fleet Inventory Display
+│   ├── check_availability.php           # AJAX Dynamic Data Validator
+│   ├── contact-us.php                   # Public Interaction Portal
+│   ├── index.php                        # Application Landing Page
+│   ├── logout.php                       # User Session Termination
+│   ├── my-booking.php                   # Personal Reservation Log
+│   ├── page.php                         # Dynamic CMS Page Loader
+│   ├── profile.php                      # User Account Management
+│   ├── search-carresult.php             # Filtered Search Processor
+│   ├── update-password.php              # Secure Credential Update
+│   └── vehicle-details.php              # Comprehensive Vehicle Specs
 │
-├── .gitattributes                       # Git Line Ending Configuration
-├── .gitignore                           # Git Ignore Rules
-├── CITATION.cff                         # Citation Metadata
-├── codemeta.json                        # Project Metadata (JSON-LD)
-├── LICENSE                              # MIT License
-├── README.md                            # Project Documentation
-└── SECURITY.md                          # Security Policy & Posture
+├── .gitattributes                       # Git Line Ending Control
+├── .gitignore                           # Excluded Files Manifest
+├── CITATION.cff                         # Academic Citation Standard
+├── codemeta.json                        # Software Metadata Metadata
+├── LICENSE                              # Project Licensing Terms
+├── README.md                            # Comprehensive Documentation
+└── SECURITY.md                          # Cybersecurity Protocol
 ```
 
 
