@@ -103,6 +103,20 @@ Developed as a mini-project for the **Database Management System (DBMS)** curric
 ```
 CAR-RENTAL-SYSTEM/
 │
+├── Mini Project/                        # Research & Academic Assets
+│   ├── Draft/                           # Preliminary Documentation
+│   │   └── IJRASET - Car Rental.docx    # Working Draft Document
+│   ├── Figures/                         # UML & Architecture Diagrams
+│   │   ├── Fig. (1) ER Diagram.png      # Entity-Relationship Diagram
+│   │   ├── Fig. (2) Use Case.png        # Use Case Diagram
+│   │   ├── Fig. (3) DFD Level 0.png     # Data Flow Diagram - Level 0
+│   │   ├── Fig. (4) DFD Level 1.png     # Data Flow Diagram - Level 1
+│   │   └── (...15 more figures...)      # Additional System Diagrams
+│   ├── B-42,45,50,51_DBMS_Project.pdf   # Formal Academic Report (09/10)
+│   ├── IJRASET-V9I7 - Car Rental.pdf    # Published Paper (IJRASET Vol 9 Issue 7)
+│   ├── IJRASET36339 - Certificate.pdf   # Publication Certificate
+│   └── Preprint - Car Rental System.pdf # viXra Preprint
+│
 ├── Source Code/
 │   ├── admin/                           # Administrative Backend Module
 │   │   ├── css/                         # Stylesheets (style.css, vars.css, libraries)
