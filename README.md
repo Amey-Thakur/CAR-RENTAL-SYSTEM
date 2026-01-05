@@ -62,7 +62,7 @@ Developed as a mini-project for the **Database Management System (DBMS)** curric
 > This project was published as a research paper in **International Journal for Research in Applied Science & Engineering Technology (IJRASET)** (Volume 9, Issue 7) and is also available as a preprint on **viXra**.
 >
 > - [Preprint @viXra](https://vixra.org/abs/2108.0140)
-- [Published Paper @IJRASET](https://doi.org/10.22214/ijraset.2021.36339)
+> - [Published Paper @IJRASET](https://doi.org/10.22214/ijraset.2021.36339)
 >
 > ### Resources
 >
