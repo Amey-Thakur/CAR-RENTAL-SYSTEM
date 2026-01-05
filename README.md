@@ -63,15 +63,15 @@ Developed as a mini-project for the **Database Management System (DBMS)** curric
 >
 > - [Preprint @viXra](https://vixra.org/abs/2108.0140)
 > - [Published Paper @IJRASET](https://doi.org/10.22214/ijraset.2021.36339)
->
-> ### Resources
->
-> | # | Project | Description | Date | Marks | Link |
-> |---|---|---|---|---|---|
-> | 1 | **Car Rental System** | Complete source code and documentation | - | - | [View](Source%20Code/) |
-> | 2 | **Project Report** | Detailed project documentation | November 28, 2020 | 09/10 | [View](Mini%20Project/B-42,45,50,51_DBMS_Mini_Project.pdf) |
-> | 3 | **Published Paper** | IJRASET (Vol 9 Issue 7) Publication | July 2021 | - | [View](Mini%20Project/IJRASET-V9I7%20-%20Car%20Rental%20System.pdf) |
-> | 4 | **Certificate** | Publication Certificate | July 2021 | - | [View](Mini%20Project/IJRASET36339%20-%20Car%20Rental%20System.pdf) |
+
+ ### Resources
+
+ | # | Project | Description | Date | Marks | Link |
+ |---|---|---|---|---|---|
+ | 1 | **Car Rental System** | Complete source code and documentation | - | - | [View](Source%20Code/) |
+ | 2 | **Project Report** | Detailed project documentation | November 28, 2020 | 09/10 | [View](Mini%20Project/B-42,45,50,51_DBMS_Mini_Project.pdf) |
+ | 3 | **Published Paper** | IJRASET (Vol 9 Issue 7) Publication | July 2021 | - | [View](Mini%20Project/IJRASET-V9I7%20-%20Car%20Rental%20System.pdf) |
+ | 4 | **Certificate** | Publication Certificate | July 2021 | - | [View](Mini%20Project/IJRASET36339%20-%20Car%20Rental%20System.pdf) |
 
 ---
 
