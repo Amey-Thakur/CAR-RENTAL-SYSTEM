@@ -103,6 +103,9 @@ Developed as a mini-project for the **Database Management System (DBMS)** curric
 ```
 CAR-RENTAL-SYSTEM/
 │
+├── docs/                                # Formal Documentation
+│   └── SPECIFICATION.md                 # Technical Architecture & Spec
+│
 ├── Mini Project/                        # Research & Academic Assets
 │   ├── Draft/                           # Preliminary Documentation
 │   │   └── IJRASET - Car Rental.docx    # Working Draft Document
@@ -131,9 +134,9 @@ CAR-RENTAL-SYSTEM/
 │   ├── IJRASET36339 - Certificate.pdf   # Publication Certificate
 │   └── Preprint - Car Rental System.pdf # viXra Preprint
 │
-├── Source Code/
+├── Source Code/                         # Full Stack Web Application
 │   ├── admin/                           # Administrative Backend Module
-│   │   ├── css/                         # Stylesheets (style.css, vars.css, libraries)
+│   │   ├── css/                         # Stylesheets (style.css, vars.css)
 │   │   ├── fonts/                       # Font Assets
 │   │   ├── img/                         # Dashboard Images
 │   │   ├── includes/                    # Admin Configurations
@@ -141,34 +144,13 @@ CAR-RENTAL-SYSTEM/
 │   │   │   ├── header.php               # Admin Navbar
 │   │   │   └── leftbar.php              # Admin Sidebar
 │   │   ├── js/                          # Scripts (main.js, libraries)
-│   │   ├── change-password.php          # Update Admin Credentials
-│   │   ├── changeimage1.php             # Update Vehicle Image 1
-│   │   ├── changeimage2.php             # Update Vehicle Image 2
-│   │   ├── changeimage3.php             # Update Vehicle Image 3
-│   │   ├── changeimage4.php             # Update Vehicle Image 4
-│   │   ├── changeimage5.php             # Update Vehicle Image 5
-│   │   ├── create-brand.php             # Add New Vehicle Brand
-│   │   ├── dashboard.php                # Main Admin Control Panel
-│   │   ├── edit-brand.php               # Modify Brand Details
-│   │   ├── edit-vehicle.php             # Modify Vehicle Details
-│   │   ├── index.php                    # Admin Login Portal
-│   │   ├── logout.php                   # Admin Session Logout
-│   │   ├── manage-bookings.php          # Reservation Management
-│   │   ├── manage-brands.php            # List & Manage Brands
-│   │   ├── manage-contactusquery.php    # User Query Management
-│   │   ├── manage-pages.php             # CMS for Static Pages
-│   │   ├── manage-subscribers.php       # Newsletter Subscriber List
-│   │   ├── manage-vehicles.php          # Fleet Inventory Management
-│   │   ├── post-avehicle.php            # Add New Vehicle to Fleet
-│   │   ├── reg-users.php                # Registered User Management
-│   │   ├── testimonials.php             # Manage User Testimonials
-│   │   └── update-contactinfo.php       # Update Contact Info Page
+│   │   └── (22 PHP files...)            # Admin Management Pages
 │   │
 │   ├── assets/                          # Frontend Resource Library
-│   │   ├── css/                         # Stylesheets (style.css, libraries)
+│   │   ├── css/                         # Stylesheets
 │   │   ├── fonts/                       # Font Assets
 │   │   ├── images/                      # Vehicle & Interface Images
-│   │   └── js/                          # Scripts (interface.js, libraries)
+│   │   └── js/                          # Scripts
 │   │
 │   ├── img/                             # General Application Images
 │   │   └── showcase.jpg                 # Homepage Banner Image
@@ -185,26 +167,15 @@ CAR-RENTAL-SYSTEM/
 │   ├── sqlfile/                         # Database Schema
 │   │   └── carrental.sql                # Full Database Dump
 │   │
-│   ├── car-listing.php                  # Vehicle Catalog
-│   ├── check_availability.php           # AJAX Availability Check
-│   ├── contact-us.php                   # Contact Form Page
-│   ├── index.php                        # Application Homepage
-│   ├── logout.php                       # User Session Logout
-│   ├── my-booking.php                   # Booking History
-│   ├── page.php                         # CMS Page Renderer
-│   ├── profile.php                      # User Profile Management
-│   ├── search-carresult.php             # Search Results Logic
-│   ├── update-password.php              # User Password Update
-│   └── vehicle-details.php              # Vehicle Detail View
+│   └── (11 PHP files...)                # Core Application Pages
 │
-├── docs/                                # Project Documentation
-│   └── SPECIFICATION.md                 # Technical Architecture & Spec
-│
-├── LICENSE                              # MIT License
+├── .gitattributes                       # Git Line Ending Configuration
+├── .gitignore                           # Git Ignore Rules
 ├── CITATION.cff                         # Citation Metadata
-├── SECURITY.md                          # Security Policy & Posture
 ├── codemeta.json                        # Project Metadata (JSON-LD)
-└── README.md                            # Project Documentation
+├── LICENSE                              # MIT License
+├── README.md                            # Project Documentation
+└── SECURITY.md                          # Security Policy & Posture
 ```
 
 
