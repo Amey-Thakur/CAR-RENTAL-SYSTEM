@@ -373,11 +373,11 @@ Special thanks to the faculty members of the Department of Computer Engineering 
 
 [↑ Back to Top](#readme-top)
 
-[Authors](#authors)&nbsp;·&nbsp;[Overview](#overview)&nbsp;·&nbsp;[Features](#features)&nbsp;·&nbsp;[Structure](#project-structure)&nbsp;·&nbsp;[Quick Start](#quick-start)&nbsp;·&nbsp;[License](#license)&nbsp;·&nbsp;[About](#about-this-repository)&nbsp;·&nbsp;[Acknowledgments](#acknowledgments)
+[Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
 
 <br>
 
-🔬 **[Database Management System Lab](https://github.com/Amey-Thakur/DATABASE-MANAGEMENT-SYSTEM-AND-DATABASE-MANAGEMENT-SYSTEM-LAB)**&nbsp;·&nbsp;🚗 **[CAR-RENTAL-SYSTEM](https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM)**
+🔬 **[Database Management System Lab](https://github.com/Amey-Thakur/DATABASE-MANAGEMENT-SYSTEM-AND-DATABASE-MANAGEMENT-SYSTEM-LAB)** &nbsp;·&nbsp; 🚗 **[CAR-RENTAL-SYSTEM](https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM)**
 
 </div>
 
