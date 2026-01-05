@@ -137,13 +137,46 @@ CAR-RENTAL-SYSTEM/
 ├── Source Code/                         # Full Stack Web Application
 │   ├── admin/                           # Administrative Backend Module
 │   │   ├── css/                         # Admin Interface Stylesheets
+│   │   │   ├── awesome-bootstrap-checkbox.css      # Custom Bootstrap Checkboxes
+│   │   │   ├── bootstrap-select.css                # Bootstrap Select Styling
+│   │   │   ├── bootstrap-social.css                # Social Icon Button Styles
+│   │   │   ├── bootstrap.min.css                   # Core Bootstrap CSS Framework
+│   │   │   ├── dataTables.bootstrap.min.css        # DataTable Bootstrap Integration
+│   │   │   ├── datatables.min.css                  # DataTable Core Styling
+│   │   │   ├── fileinput.min.css                   # File Input UI Styling
+│   │   │   ├── font-awesome.min.css                # Vector Icon Library
+│   │   │   ├── jquery.dataTables.min.css           # jQuery DataTable Base Styles
+│   │   │   ├── style.css                           # Primary Admin Interface Styles
+│   │   │   └── style.less                          # Preprocessor Style Definition
 │   │   ├── fonts/                       # Admin Interface Web Fonts
+│   │   │   ├── FontAwesome.otf                     # OpenType Icon Font
+│   │   │   ├── fontawesome-webfont.eot             # Embedded OpenType Font
+│   │   │   ├── fontawesome-webfont.svg             # Scalable Vector Graphics Font
+│   │   │   ├── fontawesome-webfont.ttf             # TrueType Icon Font
+│   │   │   ├── fontawesome-webfont.woff            # Web Open Font Format (W1)
+│   │   │   ├── fontawesome-webfont.woff2           # Web Open Font Format (W2)
+│   │   │   ├── glyphicons-halflings-regular.eot    # Glyphicon EOT Font
+│   │   │   ├── glyphicons-halflings-regular.svg    # Glyphicon SVG Font
+│   │   │   ├── glyphicons-halflings-regular.ttf    # Glyphicon TrueType Font
+│   │   │   ├── glyphicons-halflings-regular.woff   # Glyphicon WOFF Font
+│   │   │   └── glyphicons-halflings-regular.woff2  # Glyphicon WOFF2 Font
 │   │   ├── img/                         # Admin Dashboard Visual Assets
 │   │   ├── includes/                    # Admin Shared Components
 │   │   │   ├── config.php               # Admin DB Connection Settings
 │   │   │   ├── header.php               # Admin Top Navigation Bar
 │   │   │   └── leftbar.php              # Admin Lateral Sidebar
 │   │   ├── js/                          # Admin Functional Scripts
+│   │   │   ├── Chart.min.js                        # Data Visualization Library
+│   │   │   ├── bootstrap-select.js                 # Select Element Enhancements
+│   │   │   ├── bootstrap-select.min.js             # Minified Select Library
+│   │   │   ├── bootstrap.js                        # Bootstrap JS Framework
+│   │   │   ├── bootstrap.min.js                    # Minified Bootstrap JS
+│   │   │   ├── chartData.js                        # Dashboard Statistics Logic
+│   │   │   ├── dataTables.bootstrap.min.js         # DataTable UI Logic
+│   │   │   ├── fileinput.js                        # File Upload Functional Script
+│   │   │   ├── jquery.dataTables.min.js            # Core DataTable Engine
+│   │   │   ├── jquery.min.js                       # Primary jQuery Context
+│   │   │   └── main.js                             # Admin Initialization Script
 │   │   ├── change-password.php          # Admin Password Update Page
 │   │   ├── changeimage1.php             # Vehicle Image 1 Update Page
 │   │   ├── changeimage2.php             # Vehicle Image 2 Update Page
@@ -171,9 +204,37 @@ CAR-RENTAL-SYSTEM/
 │   │
 │   ├── assets/                          # Public Frontend Resources
 │   │   ├── css/                         # Public Interface Stylesheets
+│   │   │   ├── bootstrap-slider.min.css            # Range Slider UI Styles
+│   │   │   ├── bootstrap.min.css                   # Core Frontend CSS Framework
+│   │   │   ├── font-awesome.min.css                # System Icon Library
+│   │   │   ├── grabbing.html                       # Drag & Drop Interface Utility
+│   │   │   ├── owl.carousel.css                    # Image Carousel Component
+│   │   │   ├── owl.transitions.css                 # Carousel Animation Logic
+│   │   │   ├── slick.css                           # Slider Navigation Styles
+│   │   │   └── style.css                           # Primary Frontend Stylesheet
 │   │   ├── fonts/                       # Public Interface Web Fonts
+│   │   │   ├── fontawesome-webfont3e6e.eot         # Icon Font Library (EOT)
+│   │   │   ├── fontawesome-webfont3e6e.html        # Icon Manifest Catalog
+│   │   │   ├── fontawesome-webfont3e6e.svg         # Icon Font Library (SVG)
+│   │   │   ├── fontawesome-webfont3e6e.ttf         # Icon Font Library (TTF)
+│   │   │   ├── fontawesome-webfont3e6e.woff        # Icon Font Library (WOFF)
+│   │   │   ├── fontawesome-webfontd41d.eot         # Legacy Font Asset (EOT)
+│   │   │   ├── glyphicons-halflings-regular.eot    # Bootstrap Glyphicon (EOT)
+│   │   │   ├── glyphicons-halflings-regular.html   # Glyphicon Spec Catalog
+│   │   │   ├── glyphicons-halflings-regular.svg    # Bootstrap Glyphicon (SVG)
+│   │   │   ├── glyphicons-halflings-regular.ttf    # Bootstrap Glyphicon (TTF)
+│   │   │   ├── glyphicons-halflings-regular.woff   # Bootstrap Glyphicon (WOFF)
+│   │   │   └── glyphicons-halflings-regulard41d.eot # Legacy Halflings Asset
 │   │   ├── images/                      # Fleet & UI Image Assets
 │   │   └── js/                          # Public Behavioral Scripts
+│   │       ├── bootstrap-slider.min.js              # Slider UI Interaction
+│   │       ├── bootstrap.min.js                    # Bootstrap JS Componentry
+│   │       ├── countdown_date.js                   # Timer Calculation Logic
+│   │       ├── interface.js                        # General UI Transitions
+│   │       ├── jquery.countdown.min.js             # Countdown Extension
+│   │       ├── jquery.min.js                       # Primary jQuery Engine
+│   │       ├── owl.carousel.min.js                 # Carousel Engagement Script
+│   │       └── slick.min.js                        # Slider Interaction Logic
 │   │
 │   ├── img/                             # General Content Images
 │   │   └── showcase.jpg                 # Homepage Hero Image
@@ -310,13 +371,13 @@ Special thanks to the faculty members of the Department of Computer Engineering 
 <!-- FOOTER -->
 <div align="center">
 
-  [↑ Back to Top](#readme-top)
+[↑ Back to Top](#readme-top)
 
-  [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
+[Authors](#authors)&nbsp;·&nbsp;[Overview](#overview)&nbsp;·&nbsp;[Features](#features)&nbsp;·&nbsp;[Structure](#project-structure)&nbsp;·&nbsp;[Quick Start](#quick-start)&nbsp;·&nbsp;[License](#license)&nbsp;·&nbsp;[About](#about-this-repository)&nbsp;·&nbsp;[Acknowledgments](#acknowledgments)
 
-  <br>
+<br>
 
-  🔬 **[Database Management System Laboratory](https://github.com/Amey-Thakur/DATABASE-MANAGEMENT-SYSTEM-AND-DATABASE-MANAGEMENT-SYSTEM-LAB)** &nbsp;·&nbsp; 🚗 **[Car Rental System](https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM)**
+🔬 [Database Management System Lab](https://github.com/Amey-Thakur/DATABASE-MANAGEMENT-SYSTEM-AND-DATABASE-MANAGEMENT-SYSTEM-LAB)&nbsp;·&nbsp;🚗 [CAR-RENTAL-SYSTEM](https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM)
 
 </div>
 
