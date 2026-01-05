@@ -1,7 +1,7 @@
 <div align="center">
 
   <a name="readme-top"></a>
-  # Car Rental Database Management System
+  # Car Rental System
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
   ![Status](https://img.shields.io/badge/Status-Completed-success)
