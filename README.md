@@ -7,7 +7,7 @@
   ![Status](https://img.shields.io/badge/Status-Completed-success)
   [![Platform](https://img.shields.io/badge/Platform-PHP%20%7C%20MySQL%20%7C%20Apache-blueviolet)](https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM)
   [![Technology](https://img.shields.io/badge/Technology-PHP%20%7C%20Bootstrap%203%20%7C%20jQuery-orange)](https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM)
-  [![Developed by](https://img.shields.io/badge/Developed%20by-Amey%20Thakur-blue)](https://github.com/Amey-Thakur)
+  [![Developed by Amey Thakur](https://img.shields.io/badge/Developed%20by-Amey%20Thakur-blue)](https://github.com/Amey-Thakur)
 
   A comprehensive web-based Car Rental Database Management System facilitating seamless vehicle booking, fleet management, and administrative oversight.
 
@@ -19,7 +19,7 @@
 
 <div align="center">
 
-  [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
+  [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Results](#system-architecture--design-gallery) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
 
 </div>
 
@@ -43,8 +43,6 @@
   </tr>
   </table>
 
-
-
 </div>
 
 ---
@@ -52,9 +50,9 @@
 <!-- OVERVIEW -->
 ## Overview
 
-The **CAR-RENTAL-SYSTEM** is a web-based database management utility developed to automate and streamline vehicle rental operations. It features a robust dual-interface architecture that facilitates seamless interactions between end-users and administrators.
+The **Car Rental System** is a web-based database management utility developed to automate and streamline vehicle rental operations. It features a robust dual-interface architecture that facilitates seamless interactions between end-users and administrators.
 
-Developed as a mini-project for the **Database Management System (DBMS)** curriculum, this tool demonstrates the practical application of relational database design (MySQL), server-side logic (PHP), and responsive frontend development (Bootstrap).
+Developed as a mini-project for the **Database Management System Laboratory** curriculum, this tool demonstrates the practical application of relational database design (MySQL), server-side logic (PHP), and responsive frontend development (Bootstrap).
 
 > [!IMPORTANT]
 > **Research Impact**
@@ -100,7 +98,7 @@ Developed as a mini-project for the **Database Management System (DBMS)** curric
 <!-- STRUCTURE -->
 ## Project Structure
 
-```
+```bash
 CAR-RENTAL-SYSTEM/
 │
 ├── docs/                                # Formal Documentation
@@ -272,6 +270,68 @@ CAR-RENTAL-SYSTEM/
 └── SECURITY.md                          # Cybersecurity Protocol
 ```
 
+---
+
+<!-- RESULTS -->
+## System Architecture & Design Gallery
+
+<div align="center">
+
+  ### System Use Case Diagram
+  ![Use Case Diagram](Mini%20Project/Figures/Fig.%20(1)%20Use%20Case%20Diagram.png)
+
+  ### Data Flow Diagram (DFD)
+  ![Data Flow Diagram](Mini%20Project/Figures/Fig.%20(2)%20Data%20Flow%20Diagram.png)
+
+  ### System Sequence Diagram
+  ![Sequence Diagram](Mini%20Project/Figures/Fig.%20(3)%20Sequence%20Diagram.png)
+
+  ### Entity-Relationship Diagram (ERD)
+  ![ER Diagram](Mini%20Project/Figures/Fig.%20(4)%20ER%20Diagram.jpg)
+
+  ### Relational Schema (Database Tables)
+  ![Relationship Model](Mini%20Project/Figures/Fig.%20(5)%20Relationship%20Model.jpg)
+
+  ### Database Management Structure
+  ![Database Management](Mini%20Project/Figures/Fig.%20(6)%20Database%20Management%20Structure.png)
+
+  ### Homepage Interface
+  ![Home](Mini%20Project/Figures/Fig.%20(6)%20Home.jpg)
+
+  ### Vehicle Listing Page
+  ![Cars](Mini%20Project/Figures/Fig.%20(7)%20Cars.jpg)
+
+  ### Database Schema Structure
+  ![Database Structure](Mini%20Project/Figures/Fig.%20(7)%20Database%20Structure.png)
+
+  ### Contact Form Interface
+  ![Contact Us](Mini%20Project/Figures/Fig.%20(8)%20Contact%20Us.jpg)
+
+  ### User Login Interface
+  ![Sign In](Mini%20Project/Figures/Fig.%20(9)%20Sign%20In.jpg)
+
+  ### User Registration Interface
+  ![Make My Account](Mini%20Project/Figures/Fig.%20(10)%20Make%20My%20Account.jpg)
+
+  ### Password Reset Interface
+  ![Password Recovery](Mini%20Project/Figures/Fig.%20(11)%20Password%20Recovery.jpg)
+
+  ### User Profile Page
+  ![My Profile](Mini%20Project/Figures/Fig.%20(12)%20My%20Profile.jpg)
+
+  ### Password Update Interface
+  ![Update Password](Mini%20Project/Figures/Fig.%20(12)%20Update%20Password.jpg)
+
+  ### Booking History Interface
+  ![My Booking](Mini%20Project/Figures/Fig.%20(13)%20My%20Booking.jpg)
+
+  ### About Us Page
+  ![About Us](Mini%20Project/Figures/Fig.%20(14)%20About%20Us.jpg)
+
+  ### Database Connection Verification
+  ![Successful Connection](Mini%20Project/Figures/Fig.%20(15)%20Successful%20Connection.png)
+
+</div>
 
 ---
 
@@ -300,40 +360,24 @@ Ensure your local development environment meets the following requirements:
 1.  **Start Services**: Launch Apache and MySQL via your server control panel.
 2.  **Access phpMyAdmin**: Navigate to `http://localhost/phpmyadmin/`.
 3.  **Create Database**:
-    -   Click **New**.
     -   Database Name: `carrental`
     -   Collation: `utf8_general_ci`
-    -   Click **Create**.
 4.  **Import Schema**:
     -   Select the `carrental` database.
-    -   Click **Import** tab.
-    -   Choose file: `Source Code/sqlfile/carrental.sql`.
-    -   Click **Go**.
+    -   Import the `Source Code/sqlfile/carrental.sql` script.
 
-### 4. Application Configuration
-Update the database connection settings in **both** configuration files to match your local environment.
+### 4. Application Parameters
+Update the database connection settings in `Source Code/includes/config.php` (and `Source Code/admin/includes/config.php`) if your local MySQL credentials differ from the defaults.
 
-**Frontend Config**: `includes/config.php`
 ```php
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');      // Default XAMPP user
-define('DB_PASS', '');          // Default XAMPP password (empty)
-define('DB_NAME', 'carrental');
+define('DB_HOST','localhost');
+define('DB_USER','root');
+define('DB_PASS','');
+define('DB_NAME','carrental');
 ```
 
-**Backend Config**: `admin/includes/config.php`
-```php
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'carrental');
-```
-> [!NOTE]
-> Provide your specific MySQL password if one is set.
-
-### 5. Launch Application
--   **User Portal**: [http://localhost/carrental/](http://localhost/carrental/)
--   **Admin Panel**: [http://localhost/carrental/admin/](http://localhost/carrental/admin/)
+### 5. Launch
+Access the application through your local gateway: [http://localhost/carrental/](http://localhost/carrental/)
 
 ---
 
@@ -356,7 +400,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 **Institution**: [Terna Engineering College](https://ternaengg.ac.in/), Navi Mumbai  
 **University**: [University of Mumbai](https://mu.ac.in/)
 
-This project features the CAR-RENTAL-SYSTEM, a web-based utility developed as a **5th Semester Mini-Project**. It showcases the practical application of full-stack web development principles and relational database management.
+This project features the **Car Rental System**, a web-based utility developed as a **5th Semester Mini-Project**. It showcases the practical application of full-stack web development principles and relational database management.
 
 **Connect**: [GitHub](https://github.com/Amey-Thakur) · [LinkedIn](https://www.linkedin.com/in/amey-thakur)
 
@@ -371,19 +415,15 @@ Special thanks to the faculty members of the Department of Computer Engineering 
 <!-- FOOTER -->
 <div align="center">
 
-[↑ Back to Top](#readme-top)
+  [↑ Back to Top](#readme-top)
 
-[Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
+  [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Results](#system-architecture--design-gallery) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
 
-<br>
+  <br>
 
-🔬 **[Database Management System Lab](https://github.com/Amey-Thakur/DATABASE-MANAGEMENT-SYSTEM-AND-DATABASE-MANAGEMENT-SYSTEM-LAB)** &nbsp;·&nbsp; 🚗 **[CAR-RENTAL-SYSTEM](https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM)**
+  🔬 **[Database Management System Laboratory](https://github.com/Amey-Thakur/DATABASE-MANAGEMENT-SYSTEM-AND-DATABASE-MANAGEMENT-SYSTEM-LAB)** &nbsp;·&nbsp; 🚗 **[Car Rental System](https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM)**
 
-</div>
-
----
-
-<div align="center">
+  ---
 
   ### Presented as part of the 5th Semester Mini-Project @ Terna Engineering College
 
