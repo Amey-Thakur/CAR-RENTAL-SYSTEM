@@ -1,20 +1,20 @@
 <?php
 /**
  * ============================================================================
- * Car Rental Database Management System - Create Vehicle Brand
+ * Car Rental System - Create Vehicle Brand
  * ============================================================================
  * 
  * This file provides the functionality to add new vehicle brands to the system.
  * It accesses the 'tblbrands' table to store the new brand name.
  * 
  * ----------------------------------------------------------------------------
- * AUTHORSHIP & CREDITS (AHNA Team)
+ * AUTHORSHIP & CREDITS (Amey Thakur)
  * ----------------------------------------------------------------------------
- * This project was developed by the AHNA team:
+ * This project was developed by the Amey Thakur:
  * - Amey Thakur
- * - Hasan Rizvi
- * - Nithya Gnanasekar
- * - Anisha Gupta
+ * 
+ * 
+ * 
  * 
  * @package     CarRentalSystem
  * @subpackage  Admin
@@ -28,7 +28,7 @@
  * ============================================================================
  * CHANGE LOG:
  * ----------------------------------------------------------------------------
- * 2021-01-19 - Initial release - AHNA Team
+ * 2021-01-19 - Initial release - Amey Thakur
  * ============================================================================
  */
 

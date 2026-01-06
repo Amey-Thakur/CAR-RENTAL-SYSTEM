@@ -1,6 +1,6 @@
 <!--
 ============================================================================
-Car Rental Database Management System - Admin Sidebar Navigation
+Car Rental System - Admin Sidebar Navigation
 ============================================================================
 
 This file contains the HTML markup for the admin panel's sidebar navigation.
@@ -14,13 +14,10 @@ It provides links to all major administrative functions including:
 - Subscriber Management
 
 ----------------------------------------------------------------------------
-AUTHORSHIP & CREDITS (AHNA Team)
+AUTHORSHIP & CREDITS (Amey Thakur)
 ----------------------------------------------------------------------------
-This project was developed by the AHNA team:
+This project was developed by the Amey Thakur:
 - Amey Thakur
-- Hasan Rizvi
-- Nithya Gnanasekar
-- Anisha Gupta
 
 @package     CarRentalSystem
 @subpackage  Admin
@@ -34,7 +31,7 @@ This project was developed by the AHNA team:
 ============================================================================
 CHANGE LOG:
 ----------------------------------------------------------------------------
-2021-01-19 - Initial release - AHNA Team
+2021-01-19 - Initial release - Amey Thakur
 ============================================================================
 -->
 
