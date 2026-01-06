@@ -1,7 +1,7 @@
 <?php
 /**
  * ============================================================================
- * Car Rental Database Management System - Page Header
+ * Car Rental System - Page Header
  * ============================================================================
  * 
  * This file renders the global header section, including the main navigation bar
@@ -9,13 +9,13 @@
  * login status (Guest vs. Logged-in User).
  * 
  * ----------------------------------------------------------------------------
- * AUTHORSHIP & CREDITS (AHNA Team)
+ * AUTHORSHIP & CREDITS (Amey Thakur)
  * ----------------------------------------------------------------------------
- * This project was developed by the AHNA team:
+ * This project was developed by the Amey Thakur:
  * - Amey Thakur
- * - Hasan Rizvi
- * - Nithya Gnanasekar
- * - Anisha Gupta
+ * 
+ * 
+ * 
  * 
  * @package     CarRentalSystem
  * @subpackage  TemplateParts
@@ -29,7 +29,7 @@
  * ============================================================================
  * CHANGE LOG:
  * ----------------------------------------------------------------------------
- * 2021-01-19 - Initial release - AHNA Team
+ * 2021-01-19 - Initial release - Amey Thakur
  * ============================================================================
  */
 ?>

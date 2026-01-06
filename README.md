@@ -19,7 +19,7 @@
 
 <div align="center">
 
-  [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Results](#system-architecture--design-gallery) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
+  [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Results](#system-architecture--design-gallery) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
 
 </div>
 
@@ -55,21 +55,28 @@ The **Car Rental System** is a web-based database management utility developed t
 Developed as a mini-project for the **Database Management System Laboratory** curriculum, this tool demonstrates the practical application of relational database design (MySQL), server-side logic (PHP), and responsive frontend development (Bootstrap).
 
 > [!IMPORTANT]
-> **Research Impact**
+> **Research Impact & Certification**
 >
-> This project was published as a research paper in **International Journal for Research in Applied Science & Engineering Technology (IJRASET)** (Volume 9, Issue 7) and is also available as a preprint on **viXra**.
+> This project was published as an academic research paper in the **International Journal for Research in Applied Science & Engineering Technology (IJRASET)** (Volume 9, Issue 7), with a scholarly **Preprint** available on **viXra**. The project received an official **Publication Certificate** for its research contribution to database management systems.
 >
 > - [Preprint @viXra](https://vixra.org/abs/2108.0140)
 > - [Published Paper @IJRASET](https://doi.org/10.22214/ijraset.2021.36339)
+> - [Publication Certificate](Mini-Project/IJRASET36339%20-%20Car%20Rental%20System.pdf)
+
 
  ### Resources
 
  | # | Project | Description | Date | Marks | Link |
  |---|---|---|---|---|---|
  | 1 | **Car Rental System** | Complete source code and documentation | - | - | [View](Source%20Code/) |
- | 2 | **Project Report** | Detailed project documentation | November 28, 2020 | 09/10 | [View](Mini%20Project/B-42,45,50,51_DBMS_Mini_Project.pdf) |
- | 3 | **Published Paper** | IJRASET (Vol 9 Issue 7) Publication | July 2021 | - | [View](Mini%20Project/IJRASET-V9I7%20-%20Car%20Rental%20System.pdf) |
- | 4 | **Certificate** | Publication Certificate | July 2021 | - | [View](Mini%20Project/IJRASET36339%20-%20Car%20Rental%20System.pdf) |
+ | 2 | **Project Report** | Detailed project documentation | November 28, 2020 | 09/10 | [View](Mini-Project/B-42,45,50,51_DBMS_Mini_Project.pdf) |
+ | 3 | **Published Paper** | IJRASET (Vol 9 Issue 7) Publication | July 2021 | - | [View](Mini-Project/IJRASET-V9I7%20-%20Car%20Rental%20System.pdf) |
+ | 4 | **Certificate** | Publication Certificate | July 2021 | - | [View](Mini-Project/IJRASET36339%20-%20Car%20Rental%20System.pdf) |
+
+> [!TIP]
+> **Database Schema Optimization**
+> 
+> For high-performance vehicle queries, ensure that the `tblvehicles` table is indexed on `VehiclesBrand` and `PricePerDay`. This optimization significantly reduces latency during filtered search operations and dashboard aggregation in the administrative backend.
 
 ---
 
@@ -104,7 +111,7 @@ CAR-RENTAL-SYSTEM/
 ├── docs/                                # Formal Documentation
 │   └── SPECIFICATION.md                 # Technical Architecture & Spec
 │
-├── Mini Project/                        # Research & Academic Assets
+├── Mini-Project/                        # Research & Academic Assets
 │   ├── Draft/                           # Preliminary Documentation
 │   │   └── IJRASET - Car Rental.docx    # Working Draft Document
 │   ├── Figures/                         # UML & Architecture Diagrams
@@ -125,11 +132,10 @@ CAR-RENTAL-SYSTEM/
 │   │   ├── Fig. (12) Update Password.jpg           # Password Update Interface
 │   │   ├── Fig. (13) My Booking.jpg                # Booking History Interface
 │   │   ├── Fig. (14) About Us.jpg                  # About Us Page
-│   │   ├── Fig. (15) Successful Connection.png     # Database Connection Success
-│   │   └── Untitled document.pdf                   # Supporting Documentation
-│   ├── B-42,45,50,51_DBMS_Project.pdf   # Formal Academic Report (09/10)
-│   ├── IJRASET-V9I7 - Car Rental.pdf    # Published Paper (IJRASET Vol 9 Issue 7)
-│   ├── IJRASET36339 - Certificate.pdf   # Publication Certificate
+│   │   └── Fig. (15) Successful Connection.png     # Database Connection Success
+│   ├── B-42,45,50,51_DBMS_Mini_Project.pdf   # Formal Academic Report (09/10)
+│   ├── IJRASET-V9I7 - Car Rental System.pdf # Published Paper (IJRASET Vol 9 Issue 7)
+│   ├── IJRASET36339 - Car Rental System.pdf # Publication Certificate
 │   └── Preprint - Car Rental System.pdf # viXra Preprint
 │
 ├── Source Code/                         # Full Stack Web Application
@@ -278,58 +284,58 @@ CAR-RENTAL-SYSTEM/
 <div align="center">
 
   ### System Use Case Diagram
-  ![Use Case Diagram](Mini%20Project/Figures/Fig.%20(1)%20Use%20Case%20Diagram.png)
+  ![Use Case Diagram](Mini-Project/Figures/Fig.%20%281%29%20Use%20Case%20Diagram.png)
 
   ### Data Flow Diagram (DFD)
-  ![Data Flow Diagram](Mini%20Project/Figures/Fig.%20(2)%20Data%20Flow%20Diagram.png)
+  ![Data Flow Diagram](Mini-Project/Figures/Fig.%20%282%29%20Data%20Flow%20Diagram.png)
 
   ### System Sequence Diagram
-  ![Sequence Diagram](Mini%20Project/Figures/Fig.%20(3)%20Sequence%20Diagram.png)
+  ![Sequence Diagram](Mini-Project/Figures/Fig.%20%283%29%20Sequence%20Diagram.png)
 
   ### Entity-Relationship Diagram (ERD)
-  ![ER Diagram](Mini%20Project/Figures/Fig.%20(4)%20ER%20Diagram.jpg)
+  ![ER Diagram](Mini-Project/Figures/Fig.%20%284%29%20ER%20Diagram.jpg)
 
   ### Relational Schema (Database Tables)
-  ![Relationship Model](Mini%20Project/Figures/Fig.%20(5)%20Relationship%20Model.jpg)
+  ![Relationship Model](Mini-Project/Figures/Fig.%20%285%29%20Relationship%20Model.jpg)
 
   ### Database Management Structure
-  ![Database Management](Mini%20Project/Figures/Fig.%20(6)%20Database%20Management%20Structure.png)
+  ![Database Management](Mini-Project/Figures/Fig.%20%286%29%20Database%20Management%20Structure.png)
 
   ### Homepage Interface
-  ![Home](Mini%20Project/Figures/Fig.%20(6)%20Home.jpg)
+  ![Home](Mini-Project/Figures/Fig.%20%286%29%20Home.jpg)
 
   ### Vehicle Listing Page
-  ![Cars](Mini%20Project/Figures/Fig.%20(7)%20Cars.jpg)
+  ![Cars](Mini-Project/Figures/Fig.%20%287%29%20Cars.jpg)
 
   ### Database Schema Structure
-  ![Database Structure](Mini%20Project/Figures/Fig.%20(7)%20Database%20Structure.png)
+  ![Database Structure](Mini-Project/Figures/Fig.%20%287%29%20Database%20Structure.png)
 
   ### Contact Form Interface
-  ![Contact Us](Mini%20Project/Figures/Fig.%20(8)%20Contact%20Us.jpg)
+  ![Contact Us](Mini-Project/Figures/Fig.%20%288%29%20Contact%20Us.jpg)
 
   ### User Login Interface
-  ![Sign In](Mini%20Project/Figures/Fig.%20(9)%20Sign%20In.jpg)
+  ![Sign In](Mini-Project/Figures/Fig.%20%289%29%20Sign%20In.jpg)
 
   ### User Registration Interface
-  ![Make My Account](Mini%20Project/Figures/Fig.%20(10)%20Make%20My%20Account.jpg)
+  ![Make My Account](Mini-Project/Figures/Fig.%20%2810%29%20Make%20My%20Account.jpg)
 
   ### Password Reset Interface
-  ![Password Recovery](Mini%20Project/Figures/Fig.%20(11)%20Password%20Recovery.jpg)
+  ![Password Recovery](Mini-Project/Figures/Fig.%20%2811%29%20Password%20Recovery.jpg)
 
   ### User Profile Page
-  ![My Profile](Mini%20Project/Figures/Fig.%20(12)%20My%20Profile.jpg)
+  ![My Profile](Mini-Project/Figures/Fig.%20%2812%29%20My%20Profile.jpg)
 
   ### Password Update Interface
-  ![Update Password](Mini%20Project/Figures/Fig.%20(12)%20Update%20Password.jpg)
+  ![Update Password](Mini-Project/Figures/Fig.%20%2812%29%20Update%20Password.jpg)
 
   ### Booking History Interface
-  ![My Booking](Mini%20Project/Figures/Fig.%20(13)%20My%20Booking.jpg)
+  ![My Booking](Mini-Project/Figures/Fig.%20%2813%29%20My%20Booking.jpg)
 
   ### About Us Page
-  ![About Us](Mini%20Project/Figures/Fig.%20(14)%20About%20Us.jpg)
+  ![About Us](Mini-Project/Figures/Fig.%20%2814%29%20About%20Us.jpg)
 
   ### Database Connection Verification
-  ![Successful Connection](Mini%20Project/Figures/Fig.%20(15)%20Successful%20Connection.png)
+  ![Successful Connection](Mini-Project/Figures/Fig.%20%2815%29%20Successful%20Connection.png)
 
 </div>
 
@@ -344,6 +350,11 @@ Ensure your local development environment meets the following requirements:
 - **PHP**: Version **7.0** or higher.
 - **Database**: MySQL **5.6** or higher.
 - **Browser**: Modern web browser (Chrome, Firefox, Edge).
+
+> [!WARNING]
+> **Legacy Dependencies & Security**
+> 
+> This system utilizes **PHP 7.x Procedural** logic and **Bootstrap 3**. While robust for educational archiving, it is recommended to run this in a sandboxed local environment (e.g., XAMPP) to mitigate risks associated with legacy server-side scripting. Ensure that `config.php` utilizes strong MySQL credentials if deployed beyond local environments.
 
 ### 2. Setup & Deployment
 1.  **Clone the Repository**:
@@ -381,14 +392,33 @@ Access the application through your local gateway: [http://localhost/carrental/]
 
 ---
 
+<!-- =========================================================================================
+                                     USAGE SECTION
+     ========================================================================================= -->
+## Usage Guidelines
+
+This repository is openly shared to support learning and knowledge exchange across the academic community.
+
+**For Students**  
+Use this mini-project as a reference for understanding relational database design, server-side logic in PHP, and responsive frontend development. The source code and research assets are documented to support self-paced learning and exploration of full-stack database applications.
+
+**For Educators**  
+This project may serve as a practical example or supplementary teaching resource for Database Management System courses (`CSC502` / `CSL503`). Attribution is appreciated when utilizing content.
+
+**For Researchers**  
+The published paper and preprint provide insights into the system's architecture and the researchers' approach to automating vehicle rental operations.
+
+---
+
 <!-- LICENSE -->
 ## License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+This repository and all linked academic content are made available under the **MIT License**. See the [LICENSE](LICENSE) file for complete terms.
 
-**Summary**: You are free to share and adapt this content for any purpose, even commercially, as long as you provide appropriate attribution to the original author.
+> [!NOTE]
+> **Summary**: You are free to share and adapt this content for any purpose, even commercially, as long as you provide appropriate attribution to the original author.
 
-**Copyright &copy; 2021** [Amey Thakur](https://github.com/Amey-Thakur)
+Copyright © 2021 [Amey Thakur](https://github.com/Amey-Thakur)
 
 ---
 
@@ -417,7 +447,7 @@ Special thanks to the faculty members of the Department of Computer Engineering 
 
   [↑ Back to Top](#readme-top)
 
-  [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Results](#system-architecture--design-gallery) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
+  [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Results](#system-architecture--design-gallery) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
 
   <br>
 

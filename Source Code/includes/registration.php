@@ -1,7 +1,7 @@
 <?php
 /**
  * ============================================================================
- * Car Rental Database Management System - User Registration
+ * Car Rental System - User Registration
  * ============================================================================
  * 
  * This file handles the user account creation process. It provides a registration
@@ -9,13 +9,13 @@
  * to check for email uniqueness before submission.
  * 
  * ----------------------------------------------------------------------------
- * AUTHORSHIP & CREDITS (AHNA Team)
+ * AUTHORSHIP & CREDITS (Amey Thakur)
  * ----------------------------------------------------------------------------
- * This project was developed by the AHNA team:
+ * This project was developed by the Amey Thakur:
  * - Amey Thakur
- * - Hasan Rizvi
- * - Nithya Gnanasekar
- * - Anisha Gupta
+ * 
+ * 
+ * 
  * 
  * @package     CarRentalSystem
  * @subpackage  Authentication
@@ -29,7 +29,7 @@
  * ============================================================================
  * CHANGE LOG:
  * ----------------------------------------------------------------------------
- * 2021-01-19 - Initial release - AHNA Team
+ * 2021-01-19 - Initial release - Amey Thakur
  * ============================================================================
  */
 

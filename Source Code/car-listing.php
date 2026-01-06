@@ -1,7 +1,7 @@
 <?php
 /**
  * ============================================================================
- * Car Rental Database Management System - Car Listing Page
+ * Car Rental System - Car Listing Page
  * ============================================================================
  * 
  * This file handles the display of the vehicle inventory. It fetches vehicle
@@ -9,13 +9,13 @@
  * sidebar filters for users to refine their search by Brand or Fuel Type.
  * 
  * ----------------------------------------------------------------------------
- * AUTHORSHIP & CREDITS (AHNA Team)
+ * AUTHORSHIP & CREDITS (Amey Thakur)
  * ----------------------------------------------------------------------------
- * This project was developed by the AHNA team:
+ * This project was developed by the Amey Thakur:
  * - Amey Thakur
- * - Hasan Rizvi
- * - Nithya Gnanasekar
- * - Anisha Gupta
+ * 
+ * 
+ * 
  * 
  * @package     CarRentalSystem
  * @subpackage  Frontend
@@ -34,7 +34,7 @@
  * ============================================================================
  * CHANGE LOG:
  * ----------------------------------------------------------------------------
- * 2021-01-19 - Initial release - AHNA Team
+ * 2021-01-19 - Initial release - Amey Thakur
  * ============================================================================
  */
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * ============================================================================
- * Car Rental Database Management System - Admin Logout
+ * Car Rental System - Admin Logout
  * ============================================================================
  * 
  * This file handles the secure termination of the admin session.
@@ -9,13 +9,13 @@
  * redirects the administrator back to the login page.
  * 
  * ----------------------------------------------------------------------------
- * AUTHORSHIP & CREDITS (AHNA Team)
+ * AUTHORSHIP & CREDITS (Amey Thakur)
  * ----------------------------------------------------------------------------
- * This project was developed by the AHNA team:
+ * This project was developed by the Amey Thakur:
  * - Amey Thakur
- * - Hasan Rizvi
- * - Nithya Gnanasekar
- * - Anisha Gupta
+ * 
+ * 
+ * 
  * 
  * @package     CarRentalSystem
  * @subpackage  Admin
@@ -29,7 +29,7 @@
  * ============================================================================
  * CHANGE LOG:
  * ----------------------------------------------------------------------------
- * 2021-01-19 - Initial release - AHNA Team
+ * 2021-01-19 - Initial release - Amey Thakur
  * ============================================================================
  */
 

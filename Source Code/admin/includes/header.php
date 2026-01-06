@@ -1,6 +1,6 @@
 <!--
 ============================================================================
-Car Rental Database Management System - Admin Header Partial
+Car Rental System - Admin Header Partial
 ============================================================================
 
 This file contains the HTML markup for the admin panel's header section.
@@ -9,13 +9,10 @@ account dropdown menu with options to change password or logout.
 This file is included in all admin pages to maintain consistent navigation.
 
 ----------------------------------------------------------------------------
-AUTHORSHIP & CREDITS (AHNA Team)
+AUTHORSHIP & CREDITS (Amey Thakur)
 ----------------------------------------------------------------------------
-This project was developed by the AHNA team:
+This project was developed by the Amey Thakur:
 - Amey Thakur
-- Hasan Rizvi
-- Nithya Gnanasekar
-- Anisha Gupta
 
 @package     CarRentalSystem
 @subpackage  Admin
@@ -29,7 +26,7 @@ This project was developed by the AHNA team:
 ============================================================================
 CHANGE LOG:
 ----------------------------------------------------------------------------
-2021-01-19 - Initial release - AHNA Team
+2021-01-19 - Initial release - Amey Thakur
 ============================================================================
 -->
 

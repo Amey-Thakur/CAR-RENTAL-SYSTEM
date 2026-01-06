@@ -1,16 +1,16 @@
 {
     "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
     "@type": "SoftwareSourceCode",
-    "name": "CAR-RENTAL-SYSTEM",
-    "description": "A comprehensive web-based Car Rental Database Management System facilitating seamless vehicle booking, fleet management, and administrative oversight.",
+    "name": "Car Rental System",
+    "description": "A comprehensive web-based Car Rental Database Management System facilitating seamless vehicle booking, fleet management, and administrative oversight. This project serves as a scholarly collection artifact for database management systems education.",
     "identifier": "CAR-RENTAL-SYSTEM",
     "license": "https://spdx.org/licenses/MIT.html",
     "programmingLanguage": [
         "PHP",
-        "SQL",
-        "JavaScript",
+        "MySQL",
+        "HTML",
         "CSS",
-        "HTML"
+        "JavaScript"
     ],
     "author": [
         {
@@ -28,16 +28,16 @@
     "codeRepository": "https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM",
     "developmentStatus": "complete",
     "runtimePlatform": [
-        "XAMPP",
-        "WAMP",
         "Apache",
+        "MySQL",
         "PHP 7.x"
     ],
-    "applicationCategory": "Database Management System",
+    "applicationCategory": "Educational Software",
     "keywords": [
         "Car Rental",
         "PHP",
         "MySQL",
+        "DBMS",
         "Database Management",
         "Web Application",
         "Computer Engineering"
