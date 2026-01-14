@@ -47,7 +47,7 @@ The **Car Rental System** is a web-based database management utility developed t
 
 Developed as a mini-project for the **Database Management System Laboratory** curriculum, this tool demonstrates the practical application of relational database design (MySQL), server-side logic (PHP), and responsive frontend development (Bootstrap).
 
-> [!IMPORTANT]
+> [!NOTE]
 > **Research Impact & Certification**
 >
 > This project was published as an academic research paper in the **International Journal for Research in Applied Science & Engineering Technology (IJRASET)** (Volume 9, Issue 7), with a scholarly **Preprint** available on **viXra**. The project received an official **Publication Certificate** for its research contribution to database management systems.
