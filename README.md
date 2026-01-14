@@ -320,7 +320,7 @@ This project features the **Car Rental System**, a web-based utility developed a
 
 ### Acknowledgments
 
-Grateful acknowledgment to the **AHNA Team (Hasan Rizvi, Nithya Gnanasekar, Anisha Gupta)** for their pivotal role and collaborative excellence during the initial development phase of this project. Their combined expertise was instrumental in the success of this implementation. This technical record serves as a testament to our scholarly partnership and significant impact on the final system.
+Grateful acknowledgment to the **AHNA Team (Hasan Rizvi, Nithya Gnanasekar, Anisha Gupta)** for their pivotal role and collaborative excellence during the initial development phase of this project. Their combined expertise in systems analysis, logic design, and software documentation was instrumental in Achieving the project's rigorous academic objectives. This implementation serves as a scholarly testament to our productive partnership and the lasting impact of our shared peer learning journey. Gratitude is extended for their dedication to technical quality and innovative problem-solving that significantly enriched the final system architecture.
 
 Grateful acknowledgment to the faculty members of the **Department of Computer Engineering** at Terna Engineering College for their guidance and instruction in Database Management Systems. Their expertise in relational architecture and server-side logic helped shape the technical foundation of this project.
 
