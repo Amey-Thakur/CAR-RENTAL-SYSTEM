@@ -2,7 +2,7 @@
 
 ## Architectural Overview
 
-The **CAR-RENTAL-SYSTEM** is a web-based database management utility designed for the automation of vehicle rental operations. It utilizes a standard LAMP/WAMP stack architecture to facilitate seamless interactions between the frontend interface and the backend relational database.
+The **Car Rental System** is a web-based database management utility designed for the automation of vehicle rental operations. It utilizes a standard LAMP/WAMP stack architecture to facilitate seamless interactions between the frontend interface and the backend relational database.
 
 ### Data Lifecycle Diagram
 
