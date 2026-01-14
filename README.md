@@ -59,12 +59,12 @@ Developed as a mini-project for the **Database Management System Laboratory** cu
 
  ### Resources
 
- | # | Project | Description | Date | Marks | Link |
- |---|---|---|---|---|---|
- | 1 | **Car Rental System** | Complete source code and documentation | - | - | [View](Source%20Code/) |
- | 2 | **Project Report** | Detailed project documentation | November 28, 2020 | 09/10 | [View](Mini-Project/B-42,45,50,51_DBMS_Mini_Project.pdf) |
- | 3 | **Published Paper** | IJRASET (Vol 9 Issue 7) Publication | July 2021 | - | [View](Mini-Project/IJRASET-V9I7%20-%20Car%20Rental%20System.pdf) |
- | 4 | **Certificate** | Publication Certificate | July 2021 | - | [View](Mini-Project/IJRASET36339%20-%20Car%20Rental%20System.pdf) |
+ | # | Resource | Description | Date | Marks |
+ |---|---|---|---|---|
+ | 1 | [**Car Rental System**](Source%20Code/) | Complete source code and documentation | - | - |
+ | 2 | [**Project Report**](Mini-Project/B-42,45,50,51_DBMS_Mini_Project.pdf) | Detailed project documentation | November 28, 2020 | 09/10 |
+ | 3 | [**Published Paper**](Mini-Project/IJRASET-V9I7%20-%20Car%20Rental%20System.pdf) | IJRASET (Vol 9 Issue 7) Publication | July 2021 | - |
+ | 4 | [**Certificate**](Mini-Project/IJRASET36339%20-%20Car%20Rental%20System.pdf) | Publication Certificate | July 2021 | - |
 
 > [!TIP]
 > **Database Schema Optimization**
