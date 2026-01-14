@@ -61,10 +61,12 @@ Developed as a mini-project for the **Database Management System Laboratory** cu
 
  | # | Resource | Description | Date | Marks |
  |---|---|---|---|---|
- | 1 | [**Car Rental System**](Source%20Code/) | Complete source code and documentation | - | - |
- | 2 | [**Project Report**](Mini-Project/B-42,45,50,51_DBMS_Mini_Project.pdf) | Detailed project documentation | November 28, 2020 | 09/10 |
- | 3 | [**Published Paper**](Mini-Project/IJRASET-V9I7%20-%20Car%20Rental%20System.pdf) | IJRASET (Vol 9 Issue 7) Publication | July 2021 | - |
- | 4 | [**Certificate**](Mini-Project/IJRASET36339%20-%20Car%20Rental%20System.pdf) | Publication Certificate | July 2021 | - |
+ | 1 | [**Source Code**](Source%20Code/) | Complete web application source code | - | - |
+ | 2 | [**Technical Specification**](docs/SPECIFICATION.md) | System architecture and specifications | - | - |
+ | 3 | [**Project Report**](Mini-Project/B-42,45,50,51_DBMS_Mini_Project.pdf) | Detailed project documentation | November 28, 2020 | 09/10 |
+ | 4 | [**Published Paper**](Mini-Project/IJRASET-V9I7%20-%20Car%20Rental%20System.pdf) | IJRASET (Vol 9 Issue 7) Publication | July 2021 | - |
+ | 5 | [**Certificate**](Mini-Project/IJRASET36339%20-%20Car%20Rental%20System.pdf) | Publication Certificate | July 2021 | - |
+ | 6 | [**DBMS Laboratory**](https://github.com/Amey-Thakur/DATABASE-MANAGEMENT-SYSTEM-AND-DATABASE-MANAGEMENT-SYSTEM-LAB) | Computer Engineering Laboratory Repository | - | - |
 
 > [!TIP]
 > **Database Schema Optimization**
