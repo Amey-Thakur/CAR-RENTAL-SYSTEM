@@ -2,7 +2,7 @@
     "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
     "@type": "SoftwareSourceCode",
     "name": "Car Rental System",
-    "description": "A comprehensive web-based Car Rental Database Management System facilitating seamless vehicle booking, fleet management, and administrative oversight. This project serves as a scholarly collection artifact for database management systems education.",
+    "description": "A comprehensive web-based Car Rental Database Management System facilitating seamless vehicle booking, fleet management, and administrative oversight. This project serves as a scholarly collection project for database management systems education.",
     "identifier": "CAR-RENTAL-SYSTEM",
     "license": "https://spdx.org/licenses/MIT.html",
     "programmingLanguage": [

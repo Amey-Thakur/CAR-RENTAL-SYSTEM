@@ -33,19 +33,8 @@
 
   **Terna Engineering College | Computer Engineering | Batch of 2022**
 
-  <table>
-  <tr>
-  <td align="center">
-  <a href="https://github.com/Amey-Thakur">
-  <img src="https://github.com/Amey-Thakur.png" width="180px;" alt="Amey Thakur"/><br />
-  <sub><b>Amey Thakur</b></sub>
-  </a><br /><br />
-  <a href="https://orcid.org/0000-0001-5644-1575">
-  <img src="https://img.shields.io/badge/ORCID-0000--0001--5644--1575-brightgreen" alt="ORCID"/>
-  </a>
-  </td>
-  </tr>
-  </table>
+| <a href="https://github.com/Amey-Thakur"><img src="https://github.com/Amey-Thakur.png" width="150" height="150" alt="Amey Thakur"></a><br>[**Amey Thakur**](https://github.com/Amey-Thakur)<br><br>[![ORCID](https://img.shields.io/badge/ORCID-0000--0001--5644--1575-green.svg)](https://orcid.org/0000-0001-5644-1575) |
+| :---: |
 
 </div>
 
@@ -109,175 +98,66 @@ Developed as a mini-project for the **Database Management System Laboratory** cu
 <!-- STRUCTURE -->
 ## Project Structure
 
-```bash
+```python
 CAR-RENTAL-SYSTEM/
 │
-├── docs/                                # Formal Documentation
-│   └── SPECIFICATION.md                 # Technical Architecture & Spec
+├── docs/                                    # Formal Documentation
+│   └── SPECIFICATION.md                     # Technical Architecture & Specification
 │
-├── Mini-Project/                        # Research & Academic Assets
-│   ├── Draft/                           # Preliminary Documentation
-│   │   └── IJRASET - Car Rental.docx    # Working Draft Document
-│   ├── Figures/                         # UML & Architecture Diagrams
-│   │   ├── Fig. (1) Use Case Diagram.png           # System Use Case Diagram
-│   │   ├── Fig. (2) Data Flow Diagram.png          # Data Flow Diagram (DFD)
-│   │   ├── Fig. (3) Sequence Diagram.png           # System Sequence Diagram
-│   │   ├── Fig. (4) ER Diagram.jpg                 # Entity-Relationship Diagram
-│   │   ├── Fig. (5) Relationship Model.jpg         # Database Relationship Model
-│   │   ├── Fig. (6) Database Management.png        # Database Management Structure
-│   │   ├── Fig. (6) Home.jpg                       # Homepage Interface
-│   │   ├── Fig. (7) Cars.jpg                       # Vehicle Listing Page
-│   │   ├── Fig. (7) Database Structure.png         # Database Schema Structure
-│   │   ├── Fig. (8) Contact Us.jpg                 # Contact Form Interface
-│   │   ├── Fig. (9) Sign In.jpg                    # User Login Interface
-│   │   ├── Fig. (10) Make My Account.jpg           # User Registration Interface
-│   │   ├── Fig. (11) Password Recovery.jpg         # Password Reset Interface
-│   │   ├── Fig. (12) My Profile.jpg                # User Profile Page
-│   │   ├── Fig. (12) Update Password.jpg           # Password Update Interface
-│   │   ├── Fig. (13) My Booking.jpg                # Booking History Interface
-│   │   ├── Fig. (14) About Us.jpg                  # About Us Page
-│   │   └── Fig. (15) Successful Connection.png     # Database Connection Success
-│   ├── B-42,45,50,51_DBMS_Mini_Project.pdf   # Formal Academic Report (09/10)
+├── Mini-Project/                            # Research & Academic Assets
+│   ├── Draft/                               # Preliminary Documentation
+│   │   └── IJRASET - Car Rental.docx        # Working Draft Document
+│   ├── Figures/                             # UML & Architecture Diagrams
+│   │   ├── Fig. (1) Use Case Diagram.png    # System Use Case Diagram
+│   │   ├── Fig. (2) Data Flow Diagram.png   # Data Flow Diagram (DFD)
+│   │   ├── Fig. (3) Sequence Diagram.png    # System Sequence Diagram
+│   │   ├── Fig. (4) ER Diagram.jpg          # Entity-Relationship Diagram
+│   │   ├── Fig. (5) Relationship Model.jpg  # Database Relationship Model
+│   │   ├── Fig. (6) Database Management.png # Database Management Structure
+│   │   ├── Fig. (6) Home.jpg                # Homepage Interface
+│   │   ├── Fig. (7) Cars.jpg                # Vehicle Listing Page
+│   │   ├── Fig. (7) Database Structure.png  # Database Schema Structure
+│   │   ├── Fig. (8) Contact Us.jpg          # Contact Form Interface
+│   │   ├── Fig. (9) Sign In.jpg             # User Login Interface
+│   │   ├── Fig. (10) Make My Account.jpg    # User Registration Interface
+│   │   ├── Fig. (11) Password Recovery.jpg  # Password Reset Interface
+│   │   ├── Fig. (12) My Profile.jpg         # User Profile Page
+│   │   ├── Fig. (12) Update Password.jpg    # Password Update Interface
+│   │   ├── Fig. (13) My Booking.jpg         # Booking History Interface
+│   │   ├── Fig. (14) About Us.jpg           # About Us Page
+│   │   └── Fig. (15) Successful Connection.png # Database Connection Success
+│   ├── B-42,45,50,51_DBMS_Mini_Project.pdf  # Formal Academic Report (09/10)
 │   ├── IJRASET-V9I7 - Car Rental System.pdf # Published Paper (IJRASET Vol 9 Issue 7)
 │   ├── IJRASET36339 - Car Rental System.pdf # Publication Certificate
-│   └── Preprint - Car Rental System.pdf # viXra Preprint
+│   └── Preprint - Car Rental System.pdf     # viXra Preprint
 │
-├── Source Code/                         # Full Stack Web Application
-│   ├── admin/                           # Administrative Backend Module
-│   │   ├── css/                         # Admin Interface Stylesheets
-│   │   │   ├── awesome-bootstrap-checkbox.css      # Custom Bootstrap Checkboxes
-│   │   │   ├── bootstrap-select.css                # Bootstrap Select Styling
-│   │   │   ├── bootstrap-social.css                # Social Icon Button Styles
-│   │   │   ├── bootstrap.min.css                   # Core Bootstrap CSS Framework
-│   │   │   ├── dataTables.bootstrap.min.css        # DataTable Bootstrap Integration
-│   │   │   ├── datatables.min.css                  # DataTable Core Styling
-│   │   │   ├── fileinput.min.css                   # File Input UI Styling
-│   │   │   ├── font-awesome.min.css                # Vector Icon Library
-│   │   │   ├── jquery.dataTables.min.css           # jQuery DataTable Base Styles
-│   │   │   ├── style.css                           # Primary Admin Interface Styles
-│   │   │   └── style.less                          # Preprocessor Style Definition
-│   │   ├── fonts/                       # Admin Interface Web Fonts
-│   │   │   ├── FontAwesome.otf                     # OpenType Icon Font
-│   │   │   ├── fontawesome-webfont.eot             # Embedded OpenType Font
-│   │   │   ├── fontawesome-webfont.svg             # Scalable Vector Graphics Font
-│   │   │   ├── fontawesome-webfont.ttf             # TrueType Icon Font
-│   │   │   ├── fontawesome-webfont.woff            # Web Open Font Format (W1)
-│   │   │   ├── fontawesome-webfont.woff2           # Web Open Font Format (W2)
-│   │   │   ├── glyphicons-halflings-regular.eot    # Glyphicon EOT Font
-│   │   │   ├── glyphicons-halflings-regular.svg    # Glyphicon SVG Font
-│   │   │   ├── glyphicons-halflings-regular.ttf    # Glyphicon TrueType Font
-│   │   │   ├── glyphicons-halflings-regular.woff   # Glyphicon WOFF Font
-│   │   │   └── glyphicons-halflings-regular.woff2  # Glyphicon WOFF2 Font
-│   │   ├── img/                         # Admin Dashboard Visual Assets
-│   │   ├── includes/                    # Admin Shared Components
-│   │   │   ├── config.php               # Admin DB Connection Settings
-│   │   │   ├── header.php               # Admin Top Navigation Bar
-│   │   │   └── leftbar.php              # Admin Lateral Sidebar
-│   │   ├── js/                          # Admin Functional Scripts
-│   │   │   ├── Chart.min.js                        # Data Visualization Library
-│   │   │   ├── bootstrap-select.js                 # Select Element Enhancements
-│   │   │   ├── bootstrap-select.min.js             # Minified Select Library
-│   │   │   ├── bootstrap.js                        # Bootstrap JS Framework
-│   │   │   ├── bootstrap.min.js                    # Minified Bootstrap JS
-│   │   │   ├── chartData.js                        # Dashboard Statistics Logic
-│   │   │   ├── dataTables.bootstrap.min.js         # DataTable UI Logic
-│   │   │   ├── fileinput.js                        # File Upload Functional Script
-│   │   │   ├── jquery.dataTables.min.js            # Core DataTable Engine
-│   │   │   ├── jquery.min.js                       # Primary jQuery Context
-│   │   │   └── main.js                             # Admin Initialization Script
-│   │   ├── change-password.php          # Admin Password Update Page
-│   │   ├── changeimage1.php             # Vehicle Image 1 Update Page
-│   │   ├── changeimage2.php             # Vehicle Image 2 Update Page
-│   │   ├── changeimage3.php             # Vehicle Image 3 Update Page
-│   │   ├── changeimage4.php             # Vehicle Image 4 Update Page
-│   │   ├── changeimage5.php             # Vehicle Image 5 Update Page
-│   │   ├── create-brand.php             # New Brand Creation Portal
-│   │   ├── dashboard.php                # System Overview Dashboard
-│   │   ├── edit-brand.php               # Vehicle Brand Modification
-│   │   ├── edit-vehicle.php             # Vehicle Details Editor
-│   │   ├── index.php                    # Admin Authentication Portal
-│   │   ├── logout.php                   # Admin Session Termination
-│   │   ├── manage-bookings.php          # Booking & Reservation Log
-│   │   ├── manage-brands.php            # Vehicle Brand Control Center
-│   │   ├── manage-contactusquery.php    # User Communication Tracker
-│   │   ├── manage-pages.php             # Content Management (CMS)
-│   │   ├── manage-subscribers.php       # Subscription List Manager
-│   │   ├── manage-vehicles.php          # Fleet Inventory Controller
-│   │   ├── nicEdit.js                   # Inline WYSIWYG Editor
-│   │   ├── nicEditorIcons.gif           # Editor Interface Icons
-│   │   ├── post-avehicle.php            # Vehicle Listing Submission
-│   │   ├── reg-users.php                # Registered User Directory
-│   │   ├── testimonials.php             # User Feedback Management
-│   │   └── update-contactinfo.php       # Contact Information CMS
+├── Source Code/                             # Full Stack Web Application
+│   ├── admin/                               # Administrative Backend Module
+│   │   ├── css/                             # Admin Interface Stylesheets
+│   │   ├── fonts/                           # Admin Interface Web Fonts
+│   │   ├── img/                             # Admin Dashboard Visual Assets
+│   │   ├── includes/                        # Admin Shared Components
+│   │   ├── js/                              # Admin Functional Scripts
+│   │   ├── dashboard.php                    # System Overview Dashboard
+│   │   ├── manage-vehicles.php              # Fleet Inventory Controller
+│   │   └── reg-users.php                    # Registered User Directory
 │   │
-│   ├── assets/                          # Public Frontend Resources
-│   │   ├── css/                         # Public Interface Stylesheets
-│   │   │   ├── bootstrap-slider.min.css            # Range Slider UI Styles
-│   │   │   ├── bootstrap.min.css                   # Core Frontend CSS Framework
-│   │   │   ├── font-awesome.min.css                # System Icon Library
-│   │   │   ├── grabbing.html                       # Drag & Drop Interface Utility
-│   │   │   ├── owl.carousel.css                    # Image Carousel Component
-│   │   │   ├── owl.transitions.css                 # Carousel Animation Logic
-│   │   │   ├── slick.css                           # Slider Navigation Styles
-│   │   │   └── style.css                           # Primary Frontend Stylesheet
-│   │   ├── fonts/                       # Public Interface Web Fonts
-│   │   │   ├── fontawesome-webfont3e6e.eot         # Icon Font Library (EOT)
-│   │   │   ├── fontawesome-webfont3e6e.html        # Icon Manifest Catalog
-│   │   │   ├── fontawesome-webfont3e6e.svg         # Icon Font Library (SVG)
-│   │   │   ├── fontawesome-webfont3e6e.ttf         # Icon Font Library (TTF)
-│   │   │   ├── fontawesome-webfont3e6e.woff        # Icon Font Library (WOFF)
-│   │   │   ├── fontawesome-webfontd41d.eot         # Legacy Font Asset (EOT)
-│   │   │   ├── glyphicons-halflings-regular.eot    # Bootstrap Glyphicon (EOT)
-│   │   │   ├── glyphicons-halflings-regular.html   # Glyphicon Spec Catalog
-│   │   │   ├── glyphicons-halflings-regular.svg    # Bootstrap Glyphicon (SVG)
-│   │   │   ├── glyphicons-halflings-regular.ttf    # Bootstrap Glyphicon (TTF)
-│   │   │   ├── glyphicons-halflings-regular.woff   # Bootstrap Glyphicon (WOFF)
-│   │   │   └── glyphicons-halflings-regulard41d.eot # Legacy Halflings Asset
-│   │   ├── images/                      # Fleet & UI Image Assets
-│   │   └── js/                          # Public Behavioral Scripts
-│   │       ├── bootstrap-slider.min.js              # Slider UI Interaction
-│   │       ├── bootstrap.min.js                    # Bootstrap JS Componentry
-│   │       ├── countdown_date.js                   # Timer Calculation Logic
-│   │       ├── interface.js                        # General UI Transitions
-│   │       ├── jquery.countdown.min.js             # Countdown Extension
-│   │       ├── jquery.min.js                       # Primary jQuery Engine
-│   │       ├── owl.carousel.min.js                 # Carousel Engagement Script
-│   │       └── slick.min.js                        # Slider Interaction Logic
-│   │
-│   ├── img/                             # General Content Images
-│   │   └── showcase.jpg                 # Homepage Hero Image
-│   │
-│   ├── includes/                        # Core Shared Framework
-│   │   ├── config.php                   # Global Database Configuration
-│   │   ├── footer.php                   # Global Page Footer Component
-│   │   ├── forgotpassword.php           # Account Recovery Interface
-│   │   ├── header.php                   # Global Page Header (Navbar)
-│   │   ├── login.php                    # User Authentication Component
-│   │   ├── registration.php             # User Signup Component
-│   │   └── sidebar.php                  # Shared Application Sidebar
-│   │
-│   ├── sqlfile/                         # Data Architecture
-│   │   └── carrental.sql                # Relational Database Schema
-│   │
-│   ├── car-listing.php                  # Fleet Inventory Display
-│   ├── check_availability.php           # AJAX Dynamic Data Validator
-│   ├── contact-us.php                   # Public Interaction Portal
-│   ├── index.php                        # Application Landing Page
-│   ├── logout.php                       # User Session Termination
-│   ├── my-booking.php                   # Personal Reservation Log
-│   ├── page.php                         # Dynamic CMS Page Loader
-│   ├── profile.php                      # User Account Management
-│   ├── search-carresult.php             # Filtered Search Processor
-│   ├── update-password.php              # Secure Credential Update
-│   └── vehicle-details.php              # Comprehensive Vehicle Specs
+│   ├── assets/                              # Public Frontend Resources
+│   ├── includes/                            # Core Shared Framework
+│   ├── sqlfile/                             # Data Architecture
+│   │   └── carrental.sql                    # Relational Database Schema
+│   ├── car-listing.php                      # Fleet Inventory Display
+│   ├── index.php                            # Application Landing Page
+│   ├── profile.php                          # User Account Management
+│   └── vehicle-details.php                  # Comprehensive Vehicle Specs
 │
-├── .gitattributes                       # Git Line Ending Control
-├── .gitignore                           # Excluded Files Manifest
-├── CITATION.cff                         # Academic Citation Standard
-├── codemeta.json                        # Software Metadata Metadata
-├── LICENSE                              # Project Licensing Terms
-├── README.md                            # Comprehensive Documentation
-└── SECURITY.md                          # Cybersecurity Protocol
+├── .gitattributes                           # Git Line Ending Control
+├── .gitignore                               # Excluded Files Manifest
+├── CITATION.cff                             # Academic Citation Standard
+├── codemeta.json                            # Software Metadata Repository
+├── LICENSE                                  # Project Licensing Terms
+├── README.md                                # Comprehensive Documentation
+└── SECURITY.md                              # Cybersecurity Protocol
 ```
 
 ---
@@ -422,7 +302,7 @@ This repository and all linked academic content are made available under the **M
 > [!NOTE]
 > **Summary**: You are free to share and adapt this content for any purpose, even commercially, as long as you provide appropriate attribution to the original author.
 
-Copyright © 2021 [Amey Thakur](https://github.com/Amey-Thakur)
+Copyright © 2021 Amey Thakur
 
 ---
 
@@ -436,13 +316,15 @@ Copyright © 2021 [Amey Thakur](https://github.com/Amey-Thakur)
 
 This project features the **Car Rental System**, a web-based utility developed as a **5th Semester Mini-Project**. It showcases the practical application of full-stack web development principles and relational database management.
 
-**Connect**: [GitHub](https://github.com/Amey-Thakur) · [LinkedIn](https://www.linkedin.com/in/amey-thakur) · [ORCID](https://orcid.org/0000-0001-5644-1575)
+**Connect:** [GitHub](https://github.com/Amey-Thakur) &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/amey-thakur) &nbsp;·&nbsp; [ORCID](https://orcid.org/0000-0001-5644-1575)
 
 ### Acknowledgments
 
 Grateful acknowledgment to the **AHNA Team (Hasan Rizvi, Nithya Gnanasekar, Anisha Gupta)** for their pivotal role and collaborative excellence during the initial development phase of this project. Their combined expertise was instrumental in the success of this implementation. This technical record serves as a testament to our scholarly partnership and significant impact on the final system.
 
-Special thanks to the faculty members of the Department of Computer Engineering at Terna Engineering College for their guidance during the course of this project. Gratitude is also extended to the mentors and peers who supported this learning endeavor.
+Grateful acknowledgment to the faculty members of the **Department of Computer Engineering** at Terna Engineering College for their guidance and instruction in Database Management Systems. Their expertise in relational architecture and server-side logic helped shape the technical foundation of this project.
+
+Special thanks to the mentors and peers whose encouragement, discussions, and support contributed meaningfully to this learning endeavor.
 
 ---
 
@@ -459,7 +341,9 @@ Special thanks to the faculty members of the Department of Computer Engineering 
 
   ---
 
-  ### Presented as part of the 5th Semester Mini-Project @ Terna Engineering College
+  #### Presented as part of the 5th Semester Mini-Project @ Terna Engineering College
+
+  ---
 
   ### 🎓 [Computer Engineering Repository](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)
 

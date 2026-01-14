@@ -1,4 +1,4 @@
-# Technical Specification: CAR-RENTAL-SYSTEM
+# Technical Specification: Car Rental System
 
 ## Architectural Overview
 
