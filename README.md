@@ -38,6 +38,10 @@
 
 </div>
 
+> [!IMPORTANT]
+> ### 🤝🏻 Special Acknowledgement
+> *Special thanks to the **AHNA Team (Hasan Rizvi, Nithya Gnanasekar, Anisha Gupta)** for their meaningful contributions, guidance, and support that helped shape this work.*
+
 ---
 
 <!-- OVERVIEW -->
