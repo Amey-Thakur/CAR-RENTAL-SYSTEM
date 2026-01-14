@@ -10,6 +10,10 @@
 *.sql text eol=lf
 *.css text eol=lf
 *.js text eol=lf
+*.cff text eol=lf
+*.json text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf
 LICENSE text eol=lf
 
 # Explicitly mark binary files

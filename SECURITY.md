@@ -33,7 +33,7 @@ This project is implemented using the PHP language and MySQL database, as define
 
 ## Technical Integrity Statement
 
-This repository is preserved as a fixed academic and engineering artifact. Security-related submissions are recorded for documentation and contextual reference and do not imply active monitoring, response obligations, or subsequent modification of the repository.
+This repository is preserved as a fixed academic and engineering project. Security-related submissions are recorded for documentation and contextual reference and do not imply active monitoring, response obligations, or subsequent modification of the repository.
 
 ---
 
