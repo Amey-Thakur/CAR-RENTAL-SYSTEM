@@ -80,6 +80,13 @@
             width: 100%;
             border-radius: 10px;
             display: block;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(88, 166, 255, 0.3);
         }
 
         .grid {
@@ -88,16 +95,26 @@
             gap: 20px;
         }
 
-        .info-banner {
+        .paper-banner {
+            display: block;
             background: linear-gradient(135deg, #238636 0%, #2ea043 100%);
             border-radius: 10px;
-            padding: 15px 20px;
+            padding: 18px 25px;
             margin-bottom: 30px;
             text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .info-banner p {
-            font-size: 14px;
+        .paper-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(35, 134, 54, 0.5);
+        }
+
+        .paper-banner p {
+            font-size: 15px;
+            font-weight: 600;
             color: #fff;
         }
 
@@ -129,6 +146,53 @@
             color: #58a6ff;
             text-decoration: none;
         }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .lightbox-close:hover {
+            color: #ff7b72;
+        }
+
+        .lightbox-hint {
+            position: absolute;
+            bottom: 20px;
+            color: #8b949e;
+            font-size: 14px;
+        }
     </style>
 </head>
 
@@ -140,10 +204,9 @@
             <p class="subtitle">Presented as part of the 5th Semester Mini-Project @ Terna Engineering College</p>
         </div>
 
-        <div class="info-banner">
-            <p>📄 Published in IJRASET (Vol 9, Issue 7) | <a href="https://doi.org/10.22214/ijraset.2021.36339"
-                    style="color:#fff;text-decoration:underline;">View Paper</a></p>
-        </div>
+        <a href="https://doi.org/10.22214/ijraset.2021.36339" target="_blank" class="paper-banner">
+            <p>📄 Published in IJRASET (Vol 9, Issue 7) — Click to View Paper</p>
+        </a>
 
         <!-- System Architecture -->
         <div class="section">
@@ -151,19 +214,23 @@
             <div class="grid">
                 <div class="card">
                     <h3>Use Case Diagram</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(1)%20Use%20Case%20Diagram.png" alt="Use Case Diagram">
+                    <img src="Mini-Project/Figures/Fig.%20(1)%20Use%20Case%20Diagram.png" alt="Use Case Diagram"
+                        onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Data Flow Diagram</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(2)%20Data%20Flow%20Diagram.png" alt="Data Flow Diagram">
+                    <img src="Mini-Project/Figures/Fig.%20(2)%20Data%20Flow%20Diagram.png" alt="Data Flow Diagram"
+                        onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Sequence Diagram</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(3)%20Sequence%20Diagram.png" alt="Sequence Diagram">
+                    <img src="Mini-Project/Figures/Fig.%20(3)%20Sequence%20Diagram.png" alt="Sequence Diagram"
+                        onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>ER Diagram</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(4)%20ER%20Diagram.jpg" alt="ER Diagram">
+                    <img src="Mini-Project/Figures/Fig.%20(4)%20ER%20Diagram.jpg" alt="ER Diagram"
+                        onclick="openLightbox(this)">
                 </div>
             </div>
         </div>
@@ -174,11 +241,13 @@
             <div class="grid">
                 <div class="card">
                     <h3>Relationship Model</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(5)%20Relationship%20Model.jpg" alt="Relationship Model">
+                    <img src="Mini-Project/Figures/Fig.%20(5)%20Relationship%20Model.jpg" alt="Relationship Model"
+                        onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Database Structure</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(7)%20Database%20Structure.png" alt="Database Structure">
+                    <img src="Mini-Project/Figures/Fig.%20(7)%20Database%20Structure.png" alt="Database Structure"
+                        onclick="openLightbox(this)">
                 </div>
             </div>
         </div>
@@ -189,39 +258,46 @@
             <div class="grid">
                 <div class="card">
                     <h3>Homepage</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(6)%20Home.jpg" alt="Homepage">
+                    <img src="Mini-Project/Figures/Fig.%20(6)%20Home.jpg" alt="Homepage" onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Vehicle Listing</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(7)%20Cars.jpg" alt="Cars">
+                    <img src="Mini-Project/Figures/Fig.%20(7)%20Cars.jpg" alt="Cars" onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Contact Us</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(8)%20Contact%20Us.jpg" alt="Contact Us">
+                    <img src="Mini-Project/Figures/Fig.%20(8)%20Contact%20Us.jpg" alt="Contact Us"
+                        onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Sign In</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(9)%20Sign%20In.jpg" alt="Sign In">
+                    <img src="Mini-Project/Figures/Fig.%20(9)%20Sign%20In.jpg" alt="Sign In"
+                        onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Registration</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(10)%20Make%20My%20Account.jpg" alt="Registration">
+                    <img src="Mini-Project/Figures/Fig.%20(10)%20Make%20My%20Account.jpg" alt="Registration"
+                        onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Password Recovery</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(11)%20Password%20Recovery.jpg" alt="Password Recovery">
+                    <img src="Mini-Project/Figures/Fig.%20(11)%20Password%20Recovery.jpg" alt="Password Recovery"
+                        onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>User Profile</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(12)%20My%20Profile.jpg" alt="User Profile">
+                    <img src="Mini-Project/Figures/Fig.%20(12)%20My%20Profile.jpg" alt="User Profile"
+                        onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>My Bookings</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(13)%20My%20Booking.jpg" alt="My Bookings">
+                    <img src="Mini-Project/Figures/Fig.%20(13)%20My%20Booking.jpg" alt="My Bookings"
+                        onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>About Us</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(14)%20About%20Us.jpg" alt="About Us">
+                    <img src="Mini-Project/Figures/Fig.%20(14)%20About%20Us.jpg" alt="About Us"
+                        onclick="openLightbox(this)">
                 </div>
             </div>
         </div>
@@ -246,6 +322,37 @@
             <p style="margin-top: 10px;">&copy; 2021 Amey Thakur</p>
         </div>
     </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded Image">
+        <p class="lightbox-hint">Click anywhere to close</p>
+    </div>
+
+    <script>
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
 
 </html>
