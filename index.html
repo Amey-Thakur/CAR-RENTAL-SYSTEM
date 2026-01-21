@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Rental System | Amey Thakur</title>
     <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #161b22;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent: #58a6ff;
+            --success: #238636;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f6f8fa;
+            --bg-card: #ffffff;
+            --border-color: #d0d7de;
+            --text-primary: #24292f;
+            --text-secondary: #57606a;
+            --accent: #0969da;
+            --success: #1a7f37;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,11 +35,12 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
-            color: #c9d1d9;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            color: var(--text-primary);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             min-height: 100vh;
             padding: 40px 20px;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -32,19 +55,44 @@
 
         .header h1 {
             font-size: 32px;
-            color: #58a6ff;
+            color: var(--accent);
             margin-bottom: 10px;
         }
 
         .header p {
             font-size: 14px;
-            color: #8b949e;
+            color: var(--text-secondary);
         }
 
         .header .subtitle {
             margin-top: 8px;
             font-size: 13px;
-            color: #6e7681;
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            z-index: 100;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .section {
@@ -53,25 +101,51 @@
 
         .section h2 {
             font-size: 20px;
-            color: #58a6ff;
+            color: var(--accent);
             margin-bottom: 20px;
             text-align: center;
-            border-bottom: 1px solid #30363d;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
         }
 
         .card {
-            background: #161b22;
+            background: var(--bg-card);
             border-radius: 16px;
-            border: 1px solid #30363d;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             padding: 20px;
             margin-bottom: 20px;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .card:nth-child(4) {
+            animation-delay: 0.4s;
         }
 
         .card h3 {
             font-size: 14px;
-            color: #8b949e;
+            color: var(--text-secondary);
             margin-bottom: 15px;
             text-align: center;
         }
@@ -97,7 +171,7 @@
 
         .paper-banner {
             display: block;
-            background: linear-gradient(135deg, #238636 0%, #2ea043 100%);
+            background: linear-gradient(135deg, var(--success) 0%, #2ea043 100%);
             border-radius: 10px;
             padding: 18px 25px;
             margin-bottom: 30px;
@@ -105,6 +179,7 @@
             text-decoration: none;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            animation: fadeInUp 0.5s ease forwards;
         }
 
         .paper-banner:hover {
@@ -127,23 +202,23 @@
         }
 
         .tech-badge {
-            background: #21262d;
-            border: 1px solid #30363d;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 8px 16px;
             font-size: 12px;
-            color: #8b949e;
+            color: var(--text-secondary);
         }
 
         .footer {
             text-align: center;
             margin-top: 40px;
             font-size: 12px;
-            color: #8b949e;
+            color: var(--text-secondary);
         }
 
         .footer a {
-            color: #58a6ff;
+            color: var(--accent);
             text-decoration: none;
         }
 
@@ -157,9 +232,9 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.95);
             z-index: 1000;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            cursor: zoom-out;
         }
 
         .lightbox.active {
@@ -167,8 +242,8 @@
         }
 
         .lightbox img {
-            max-width: 95%;
-            max-height: 95%;
+            max-width: 90%;
+            max-height: 80%;
             border-radius: 8px;
             box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
         }
@@ -187,16 +262,71 @@
             color: #ff7b72;
         }
 
+        .lightbox-caption {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: #fff;
+            cursor: pointer;
+            padding: 20px;
+            user-select: none;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .lightbox-nav:hover {
+            color: var(--accent);
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .lightbox-download {
+            position: absolute;
+            bottom: 30px;
+            background: var(--accent);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .lightbox-download:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(88, 166, 255, 0.4);
+        }
+
         .lightbox-hint {
             position: absolute;
-            bottom: 20px;
+            bottom: 80px;
             color: #8b949e;
-            font-size: 14px;
+            font-size: 12px;
         }
     </style>
 </head>
 
 <body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+        <span id="theme-icon">🌙</span>
+    </button>
+
     <div class="container">
         <div class="header">
             <h1>🚗 Car Rental System</h1>
@@ -215,22 +345,22 @@
                 <div class="card">
                     <h3>Use Case Diagram</h3>
                     <img src="Mini-Project/Figures/Fig.%20(1)%20Use%20Case%20Diagram.png" alt="Use Case Diagram"
-                        onclick="openLightbox(this)">
+                        data-title="Use Case Diagram" onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Data Flow Diagram</h3>
                     <img src="Mini-Project/Figures/Fig.%20(2)%20Data%20Flow%20Diagram.png" alt="Data Flow Diagram"
-                        onclick="openLightbox(this)">
+                        data-title="Data Flow Diagram" onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Sequence Diagram</h3>
                     <img src="Mini-Project/Figures/Fig.%20(3)%20Sequence%20Diagram.png" alt="Sequence Diagram"
-                        onclick="openLightbox(this)">
+                        data-title="Sequence Diagram" onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>ER Diagram</h3>
                     <img src="Mini-Project/Figures/Fig.%20(4)%20ER%20Diagram.jpg" alt="ER Diagram"
-                        onclick="openLightbox(this)">
+                        data-title="ER Diagram" onclick="openLightbox(this)">
                 </div>
             </div>
         </div>
@@ -242,12 +372,12 @@
                 <div class="card">
                     <h3>Relationship Model</h3>
                     <img src="Mini-Project/Figures/Fig.%20(5)%20Relationship%20Model.jpg" alt="Relationship Model"
-                        onclick="openLightbox(this)">
+                        data-title="Relationship Model" onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Database Structure</h3>
                     <img src="Mini-Project/Figures/Fig.%20(7)%20Database%20Structure.png" alt="Database Structure"
-                        onclick="openLightbox(this)">
+                        data-title="Database Structure" onclick="openLightbox(this)">
                 </div>
             </div>
         </div>
@@ -258,45 +388,47 @@
             <div class="grid">
                 <div class="card">
                     <h3>Homepage</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(6)%20Home.jpg" alt="Homepage" onclick="openLightbox(this)">
+                    <img src="Mini-Project/Figures/Fig.%20(6)%20Home.jpg" alt="Homepage" data-title="Homepage"
+                        onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Vehicle Listing</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(7)%20Cars.jpg" alt="Cars" onclick="openLightbox(this)">
+                    <img src="Mini-Project/Figures/Fig.%20(7)%20Cars.jpg" alt="Vehicle Listing"
+                        data-title="Vehicle Listing" onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Contact Us</h3>
                     <img src="Mini-Project/Figures/Fig.%20(8)%20Contact%20Us.jpg" alt="Contact Us"
-                        onclick="openLightbox(this)">
+                        data-title="Contact Us" onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Sign In</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(9)%20Sign%20In.jpg" alt="Sign In"
+                    <img src="Mini-Project/Figures/Fig.%20(9)%20Sign%20In.jpg" alt="Sign In" data-title="Sign In"
                         onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Registration</h3>
                     <img src="Mini-Project/Figures/Fig.%20(10)%20Make%20My%20Account.jpg" alt="Registration"
-                        onclick="openLightbox(this)">
+                        data-title="Registration" onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>Password Recovery</h3>
                     <img src="Mini-Project/Figures/Fig.%20(11)%20Password%20Recovery.jpg" alt="Password Recovery"
-                        onclick="openLightbox(this)">
+                        data-title="Password Recovery" onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>User Profile</h3>
                     <img src="Mini-Project/Figures/Fig.%20(12)%20My%20Profile.jpg" alt="User Profile"
-                        onclick="openLightbox(this)">
+                        data-title="User Profile" onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>My Bookings</h3>
                     <img src="Mini-Project/Figures/Fig.%20(13)%20My%20Booking.jpg" alt="My Bookings"
-                        onclick="openLightbox(this)">
+                        data-title="My Bookings" onclick="openLightbox(this)">
                 </div>
                 <div class="card">
                     <h3>About Us</h3>
-                    <img src="Mini-Project/Figures/Fig.%20(14)%20About%20Us.jpg" alt="About Us"
+                    <img src="Mini-Project/Figures/Fig.%20(14)%20About%20Us.jpg" alt="About Us" data-title="About Us"
                         onclick="openLightbox(this)">
                 </div>
             </div>
@@ -304,7 +436,7 @@
 
         <!-- Tech Stack -->
         <div class="card">
-            <h2 style="color:#58a6ff;text-align:center;margin-bottom:15px;">Tech Stack</h2>
+            <h2 style="color:var(--accent);text-align:center;margin-bottom:15px;">Tech Stack</h2>
             <div class="tech-stack">
                 <span class="tech-badge">🐘 PHP 7.x</span>
                 <span class="tech-badge">🗄️ MySQL</span>
@@ -324,34 +456,91 @@
     </div>
 
     <!-- Lightbox Modal -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <span class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</span>
+        <span class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</span>
         <img id="lightbox-img" src="" alt="Expanded Image">
-        <p class="lightbox-hint">Click anywhere to close</p>
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+        <a class="lightbox-download" id="lightbox-download" href="" download>⬇ Download Image</a>
+        <p class="lightbox-hint">Use ← → arrow keys to navigate · ESC to close</p>
     </div>
 
     <script>
+        // Collect all gallery images
+        const images = Array.from(document.querySelectorAll('.card img'));
+        let currentIndex = 0;
+
         function openLightbox(img) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = img.src;
-            lightboxImg.alt = img.alt;
-            lightbox.classList.add('active');
+            currentIndex = images.indexOf(img);
+            showImage(currentIndex);
+            document.getElementById('lightbox').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
+        function showImage(index) {
+            const img = images[index];
+            const lightboxImg = document.getElementById('lightbox-img');
+            const caption = document.getElementById('lightbox-caption');
+            const download = document.getElementById('lightbox-download');
+
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            caption.textContent = img.dataset.title || img.alt;
+            download.href = img.src;
+        }
+
+        function navigateLightbox(direction) {
+            event.stopPropagation();
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            showImage(currentIndex);
+        }
+
         function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
+            document.getElementById('lightbox').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
 
-        // Close on Escape key
+        // Keyboard navigation
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
+            const lightbox = document.getElementById('lightbox');
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
         });
+
+        // Click outside image to close
+        document.getElementById('lightbox').addEventListener('click', function (e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        // Theme toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.dataset.theme === 'dark') {
+                html.dataset.theme = 'light';
+                icon.textContent = '☀️';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.dataset.theme = 'dark';
+                icon.textContent = '🌙';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme
+        (function () {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'light') {
+                document.documentElement.dataset.theme = 'light';
+                document.getElementById('theme-icon').textContent = '☀️';
+            }
+        })();
     </script>
 </body>
 
