@@ -31,3 +31,11 @@ LICENSE text eol=lf
 *.md text diff=markdown
 *.php text diff=php
 *.sql text diff=sql
+
+# Language Detection - Focus on Source Code
+docs/** linguist-vendored
+Mini-Project/** linguist-vendored
+CITATION.cff linguist-vendored
+codemeta.json linguist-vendored
+LICENSE linguist-vendored
+SECURITY.md linguist-vendored
