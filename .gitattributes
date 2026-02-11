@@ -41,7 +41,7 @@ LICENSE linguist-vendored
 SECURITY.md linguist-vendored
 
 # Language Detection - Vendor Assets and Libraries
-Source Code/assets/** linguist-vendored
-Source Code/admin/css/** linguist-vendored
-Source Code/admin/js/** linguist-vendored
-Source Code/admin/fonts/** linguist-vendored
+Source\ Code/assets/** linguist-vendored
+Source\ Code/admin/css/** linguist-vendored
+Source\ Code/admin/js/** linguist-vendored
+Source\ Code/admin/fonts/** linguist-vendored
