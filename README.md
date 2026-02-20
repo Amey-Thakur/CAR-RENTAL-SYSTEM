@@ -282,7 +282,9 @@ Access the application through your local gateway: [http://localhost/carrental/]
 
 > [!TIP]
 > **Car Rental Database Management System**
-> Access the scholarly-verified IJRASET research simulation featuring advanced relational database architecture and responsive fleet management logic.
+>
+> Access the comprehensive IJRASET-published research simulation featuring detailed UML architecture, advanced relational database models, and a high-fidelity web-based fleet management ecosystem.
+>
 > [**Launch Live Demo**](https://amey-thakur.github.io/CAR-RENTAL-SYSTEM/)
 
 ---
