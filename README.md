@@ -280,6 +280,11 @@ define('DB_NAME','carrental');
 ### 5. Launch
 Access the application through your local gateway: [http://localhost/carrental/](http://localhost/carrental/)
 
+> [!TIP]
+> **Car Rental Database Management System**
+> Access the scholarly-verified IJRASET research simulation featuring advanced relational database architecture and responsive fleet management logic.
+> [**Launch Live Demo**](https://amey-thakur.github.io/CAR-RENTAL-SYSTEM/)
+
 ---
 
 <!-- =========================================================================================
