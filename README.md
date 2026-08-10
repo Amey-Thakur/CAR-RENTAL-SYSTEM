@@ -1,6 +1,4 @@
 <div align="center">
-
-  <a name="readme-top"></a>
   
   # Car Rental System
 
@@ -61,16 +59,16 @@ Developed as a mini-project for the **Database Management System Laboratory** cu
 > - [Publication Certificate](Mini-Project/IJRASET36339%20-%20Car%20Rental%20System.pdf)
 
 
- ### Resources
+### Resources
 
- | # | Resource | Description | Date | Marks |
- |---|---|---|---|---|
- | 1 | [**Source Code**](Source%20Code/) | Complete web application source code | - | - |
- | 2 | [**Technical Specification**](docs/SPECIFICATION.md) | System architecture and specifications | - | - |
- | 3 | [**Project Report**](Mini-Project/B-42,45,50,51_DBMS_Mini_Project.pdf) | Detailed project documentation | November 28, 2020 | 09/10 |
- | 4 | [**Published Paper**](Mini-Project/IJRASET-V9I7%20-%20Car%20Rental%20System.pdf) | IJRASET (Vol 9 Issue 7) Publication | July 2021 | - |
- | 5 | [**Certificate**](Mini-Project/IJRASET36339%20-%20Car%20Rental%20System.pdf) | Publication Certificate | July 2021 | - |
- | 6 | [**DBMS Laboratory**](https://github.com/Amey-Thakur/DATABASE-MANAGEMENT-SYSTEM-AND-DATABASE-MANAGEMENT-SYSTEM-LAB) | Computer Engineering Laboratory Repository | - | - |
+| # | Resource | Description | Date | Marks |
+|---|---|---|---|---|
+| 1 | [**Source Code**](Source%20Code/) | Complete web application source code | - | - |
+| 2 | [**Technical Specification**](docs/SPECIFICATION.md) | System architecture and specifications | - | - |
+| 3 | [**Project Report**](Mini-Project/B-42,45,50,51_DBMS_Mini_Project.pdf) | Detailed project documentation | November 28, 2020 | 09/10 |
+| 4 | [**Published Paper**](Mini-Project/IJRASET-V9I7%20-%20Car%20Rental%20System.pdf) | IJRASET (Vol 9 Issue 7) Publication | July 2021 | - |
+| 5 | [**Certificate**](Mini-Project/IJRASET36339%20-%20Car%20Rental%20System.pdf) | Publication Certificate | July 2021 | - |
+| 6 | [**DBMS Laboratory**](https://github.com/Amey-Thakur/DATABASE-MANAGEMENT-SYSTEM-AND-DATABASE-MANAGEMENT-SYSTEM-LAB) | Computer Engineering Laboratory Repository | - | - |
 
 > [!TIP]
 > **Database Schema Optimization**
@@ -236,7 +234,7 @@ CAR-RENTAL-SYSTEM/
 
 ### 1. Prerequisites
 Ensure your local development environment meets the following requirements:
-- **Web Server**: Apache (via [XAMPP](https://www.apachefriends.org/index.html), [WAMP](http://www.wampserver.com/en/), or [MAMP](https://www.mamp.info/)).
+- **Web Server**: Apache (via [XAMPP](https://www.apachefriends.org/index.html), [WAMP](https://sourceforge.net/projects/wampserver/), or [MAMP](https://www.mamp.info/)).
 - **PHP**: Version **7.0** or higher.
 - **Database**: MySQL **5.6** or higher.
 - **Browser**: Modern web browser (Chrome, Firefox, Edge).
@@ -344,7 +342,7 @@ Special thanks to the mentors and peers whose encouragement, discussions, and su
 <!-- FOOTER -->
 <div align="center">
 
-  [↑ Back to Top](#readme-top)
+  [↑ Back to Top](#car-rental-system)
 
   [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Results](#system-architecture--design-gallery) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
 
