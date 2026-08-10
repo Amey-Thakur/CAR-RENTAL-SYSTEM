@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Car Rental System - Social Preview</title>
+<!-- Renders the 1280x640 social preview from this repository's own assets. -->
+</head>
+<body>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:640px;overflow:hidden;font-family:"Segoe UI",system-ui,sans-serif}
+.card{position:relative;width:1280px;height:640px;overflow:hidden;background:#00FFFF}
+.nav{height:52px;background:#111;display:flex;align-items:center;padding:0 26px;gap:26px}
+.nav .acct{background:#1a1aff;color:#fff;font-size:13px;font-weight:700;letter-spacing:.06em;padding:9px 16px}
+.nav .links{margin-left:auto;display:flex;gap:32px;font-size:13px;font-weight:700;letter-spacing:.10em;color:#fff}
+.panel{position:absolute;left:56px;top:104px;width:452px;background:#111;padding:32px 30px 34px;color:#fff}
+.k{font-size:13px;font-weight:700;letter-spacing:.18em;color:#00FFFF}
+.h1{margin-top:14px;font-size:48px;font-weight:800;line-height:1.04;letter-spacing:-.02em;color:#fff}
+.rule{margin:20px 0 18px;width:74px;height:4px;background:#1a1aff}
+.meta{font-size:16px;font-weight:600;color:#bfc7d4;line-height:1.8}
+.meta b{color:#fff;font-weight:700}
+.by{margin-top:22px;font-size:18px;font-weight:700;color:#fff}
+.by span{display:block;font-size:12px;font-weight:600;letter-spacing:.16em;color:#8b93a3;margin-bottom:7px}
+.hdr{position:absolute;left:552px;top:104px;width:670px;background:#111;color:#1a1aff;font-size:16px;
+     font-weight:800;letter-spacing:.10em;padding:14px 22px}
+.row{position:absolute;left:552px;width:670px;height:200px;background:#f2f2f2;display:flex;overflow:hidden}
+.row img{width:280px;height:200px;object-fit:cover;display:block}
+.det{flex:1;padding:22px 26px}
+.r1{top:158px}.r2{top:372px}
+.name{font-size:25px;font-weight:800;color:#111}
+.price{margin-top:8px;font-size:18px;font-weight:700;color:#1a1aff}
+.spec{margin-top:14px;display:flex;gap:26px;font-size:14px;font-weight:600;color:#1a1aff}
+.btn{margin-top:18px;display:inline-block;background:#1a1aff;color:#fff;font-size:15px;font-weight:700;
+     padding:13px 30px;letter-spacing:.04em}
+.foot{position:absolute;left:0;right:0;bottom:0;height:46px;background:#1a1aff;color:#fff;
+      display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;letter-spacing:.04em}
+</style>
+<div class="card">
+  <div class="nav"><span class="acct">MY ACCOUNT</span>
+    <span class="links"><span>HOME</span><span>CARS</span><span>CONTACT US</span><span>ABOUT US</span></span></div>
+  <div class="panel">
+    <div class="k">MINI PROJECT &middot; SEMESTER V &middot; CSL503</div>
+    <div class="h1">Car Rental<br>System</div>
+    <div class="rule"></div>
+    <div class="meta">Online vehicle booking, with a separate admin<br><b>PHP &middot; MySQL &middot; 2020</b></div>
+    <div class="by"><span>DESIGNED &amp; DEVELOPED BY</span>Amey Thakur</div>
+  </div>
+  <div class="hdr">20 CARS</div>
+  <div class="row r1">
+    <img src="Source%20Code/admin/img/vehicleimages/z4.jpg" alt="BMW Z4">
+    <div class="det">
+      <div class="name">BMW , Z4</div>
+      <div class="price">&#8377;450000 Per Day Rental</div>
+      <div class="spec"><span>2 seats</span><span>2019 model</span><span>Petrol</span></div>
+      <div class="btn">View Details</div>
+    </div>
+  </div>
+  <div class="row r2">
+    <img src="Source%20Code/admin/img/vehicleimages/3series-1.jpg" alt="BMW 3 Series">
+    <div class="det">
+      <div class="name">BMW , 3 Series</div>
+      <div class="price">&#8377;599999 Per Day Rental</div>
+      <div class="spec"><span>5 seats</span><span>2018 model</span><span>Petrol</span></div>
+      <div class="btn">View Details</div>
+    </div>
+  </div>
+  <div class="foot">Copyright &copy; 2020 AHNA car India Private Ltd. All rights reserved.</div>
+</div>
+</body>
+</html>
