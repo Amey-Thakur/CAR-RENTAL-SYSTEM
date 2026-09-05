@@ -1,0 +1,33 @@
+# Car Rental System
+
+> A web-based Car Rental Database Management System designed for online
+> vehicle booking and administrative management, featuring separate user and
+> admin interfaces.
+
+Author: Amey Thakur, ORCID 0000-0001-5644-1575
+Institution: Terna Engineering College, University of Mumbai
+Programme: B.E. Computer Engineering, Third Year, Semester V
+Licence: CC BY 4.0, attribution required
+Repository created: 3 November 2020
+Work dated: 19 January 2021
+
+## What is in this repository
+
+- Mini-Project, 24 files
+- Source Code, 233 files
+- docs, 1 file
+- index.html
+
+## Subject terms
+
+booking-system, car-rental-system, computer-engineering, computer-science,
+css, database-management-system, dbms, engineering, fleet-management,
+html, javascript, mysql, php, research-paper, university-of-mumbai
+
+## Where this sits
+
+- This repository: https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM
+- Degree index, every subject and project: https://github.com/Amey-Thakur/COMPUTER-ENGINEERING
+- Project page: https://amey-thakur.github.io/CAR-RENTAL-SYSTEM/
+- Author: https://github.com/Amey-Thakur
+- Research notes and reflections: https://amey-thakur.github.io/

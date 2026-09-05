@@ -24,8 +24,10 @@
             }
         }
     ],
+    "dateCreated": "2020-11-03",
     "dateReleased": "2021-01-19",
     "codeRepository": "https://github.com/Amey-Thakur/CAR-RENTAL-SYSTEM",
+    "isPartOf": "https://github.com/Amey-Thakur/COMPUTER-ENGINEERING",
     "developmentStatus": "complete",
     "runtimePlatform": [
         "Apache",
@@ -40,6 +42,32 @@
         "DBMS",
         "Database Management",
         "Web Application",
-        "Computer Engineering"
-    ]
+        "Computer Engineering",
+        "Booking System",
+        "Car Rental System",
+        "Computer Science",
+        "CSS",
+        "Database Management System",
+        "Engineering",
+        "Fleet Management",
+        "HTML",
+        "JavaScript",
+        "Research Paper",
+        "University Of Mumbai",
+        "University of Mumbai",
+        "Mumbai University",
+        "Terna Engineering College",
+        "Navi Mumbai",
+        "India",
+        "B.E. Computer Engineering",
+        "Semester V",
+        "Amey Thakur",
+        "amey",
+        "ameythakur",
+        "amey-thakur",
+        "ameyarc",
+        "Mega Satish",
+        "megasatish"
+    ],
+    "url": "https://amey-thakur.github.io/CAR-RENTAL-SYSTEM/"
 }
